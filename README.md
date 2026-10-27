@@ -1,16 +1,105 @@
-# Business as Usual — Prototype 001: *Welcome to the Company*
+# Business as Usual
 
 A workplace comedy about people, projects, progress, profit, and a bit of chaos.
-Built in **Godot 4.3+ (GDScript)**, Forward+ renderer.
+Built in **Godot 4.3+ (GDScript)**.
 
-You are **Alex**, a brand-new junior consultant at **Northbound Consulting**
-("We go where the requirements take us"). Your first day goes like this: you meet the team, sit through a
-meeting about reducing meetings, get an URGENT email that says nothing, find out what the client actually
-wants, write the handover, test it, deploy it… and then the biscuits arrive.
+> **This branch (`claude/illustrated-diorama`) is Prototype 002 — *The Illustrated Diorama*:** a
+> visual test of the new art direction. A printed-cardboard office stands on a desk, with paper-puppet
+> characters, all in Godot's lightweight **Compatibility** renderer. Pressing F5 opens the diorama test
+> scene. Prototype 001 (the full-3D Day 1) is unchanged on `claude/compassionate-heisenberg-5vo8g4`, and
+> its scene `scenes/main.tscn` is still in this branch.
 
-Roughly 10–15 minutes of play, with one complete story and several branches.
+## Prototype 002 — The Illustrated Diorama
+
+### Open and run
+1. Install **Godot 4.3** or newer (standard build, not .NET).
+2. Project Manager → **Import** → choose `project.godot` at the repository root → **Import & Edit**.
+3. Wait for the first import to finish. It converts the PNG sprites, fonts and audio, and builds the class
+   cache. This step is required.
+4. Press **F5**. The main scene is `scenes/diorama_test.tscn`. To see the old 3D prototype, open
+   `scenes/main.tscn` and press **F6**. It now runs in the Compatibility renderer, so it looks flatter
+   than it did on its original branch.
+
+### What the test scene contains
+- **One office room** built like a diorama on a desk. It has corrugated-cardboard edges, a wood floor, a
+  teal wainscot, a window onto the city, a clock that tells the real time, a door, a bookshelf, a
+  whiteboard, a printer, plants, a coffee counter, a water cooler, a cake table and Alex's desk (rubber
+  duck included).
+- **Three cardboard characters: Alex, Maggie and Chad.** Each is a paper puppet. Body, arms and head are
+  separate die-cut cards on hinge pins, and the face is a set of printed overlays.
+  - Idle: a springy bob and blinking.
+  - Walking: a two-frame stride plus a waddle. Changing direction flips the card over like paper.
+  - Talking: mouth flaps and head bobs.
+  - Gestures: point, shrug, wave, cheer, shock, facepalm, rage, slump, confused.
+  - Expressions: joy, shock, smug, worried, deadpan and others.
+- **Point-and-click.** Click the floor to walk. Click people and objects to interact (hover shows a ring
+  and a tooltip). Bouncing arrows mark the suggested interactions.
+- **Four comedy beats:**
+  - Maggie's cake celebration: hearts and sparkles.
+  - Chad's awkward silence: both characters freeze, a "…" bubble and a sweat drop appear, crickets play,
+    and the wall clock runs backwards.
+  - Your desk's escalation phone: it buzzes, glows red and throws embers while Gerald's URGENT toasts
+    arrive.
+  - The whiteboard: "cake is a legacy process" turns into a cartoon dust-cloud brawl between Chad and
+    Maggie, full of grawlix, stars and the occasional arm. Maggie wins.
+- **Shared UI from Prototype 001:** the dialogue box, with live paper portraits and a masking-tape detail,
+  plus choices, skip, toasts, the phone widget, settings and the pause menu.
+- **F3** shows a live performance overlay: FPS, frame time, draw calls, objects, primitives and memory.
+
+### Rendering techniques (why it's light)
+- **Compatibility renderer (OpenGL 3).** The scene uses **no real-time lights, shadows or
+  post-processing**. Every material is **unshaded**. Light and shading are painted into the
+  illustrations: cel-shaded tones, a die-cut paper border, a cardboard thickness lip, and a faint paper
+  grain baked into every sprite.
+- **The room is a few textured quads**: floor, wall bands, side walls and cardboard edge strips. Soft
+  "contact shadows" and the window's light pool are small gradient quads. The latter is additive and
+  doesn't write to the depth buffer.
+- **Props and characters are Sprite3D standees** that lean back 7° like real cardboard. Each puppet is 9–10
+  quads.
+  - Parts are separated by a few millimetres in depth.
+  - `ALPHA_CUT_OPAQUE_PREPASS` keeps their edges smooth and their sorting correct.
+- **Fixed camera** with a slow drift and a slight follow. The flat pieces are never seen edge-on, so
+  there is no billboarding and nothing rotates unnaturally.
+- **Textures** are lossless PNGs with mipmaps, and VRAM compression is disabled to avoid halos on the
+  illustrations (see `[importer_defaults]` in `project.godot`). Characters are about 3× their on-screen
+  size, and the whole sprite set is about 3 MB.
+- **Effects** are a handful of sprites animated with tweens. There are no GPU particles and no
+  per-frame allocations beyond short-lived symbols.
+
+### The art pipeline
+All illustrations are original vector art written as code in `tools/art/`:
+- `characters.py` holds the puppets and their face overlays.
+- `props.py` holds the props, decals, surfaces and effects.
+
+`build_art.py` renders them with Chromium (Playwright) into `art/sprites/`. It also writes a
+`parts.json` manifest per character, which the Godot rig reads. To regenerate:
+```
+python3 tools/art/build_art.py      # needs numpy, Pillow, Node + Playwright
+```
+Previews of the actual sprite assets are in `docs/art/` (`characters.png`, `expressions.png`,
+`props.png`).
+
+### Verification status for Prototype 002 (please read)
+- **Not run in Godot.** The cloud environment could download the engine but was not permitted to execute
+  it. So **no in-engine screenshots and no benchmark numbers exist yet**, and none are claimed.
+  - To measure, run `godot --path . -- --benchmark`. It prints average and p99 frame time, draw calls,
+    objects and video memory after 20 seconds, then quits.
+  - In the editor, F3 shows the same numbers live.
+- **Verified:**
+  - Every script parses (gdtoolkit).
+  - Every text key and story event used by the diorama exists.
+  - Every referenced sprite exists.
+  - All art was rendered and visually inspected as images.
+  - The room composition was checked with a projection script that uses the same camera numbers.
+- **Honest art note:** the characters and props are hand-authored vector illustrations, made with care
+  and consistent in style, but they come from code, not from an illustrator or an image-generation
+  model. They are a strong, cohesive placeholder for the art direction, not final production art.
 
 ---
+
+# Prototype 001 — Welcome to the Company (full 3D, kept for reference)
+
+> On this branch, open `scenes/main.tscn` and press **F6** to run it. The notes below describe Prototype 001.
 
 ## Running it
 
