@@ -1,0 +1,1032 @@
+{
+  "ui": {
+    "skip": "Skip ▸▸",
+    "you": "{name} (you)",
+    "today": "TODAY’S OBJECTIVE",
+    "clock": "Monday · {time}",
+    "reputation": "Reputation",
+    "controls_hint": "Click to walk · Click people & things to interact · Wheel to zoom · Space to continue · Tab to skip · Esc for menu",
+    "phone_tip": "Your phone",
+    "phone_title": "Notifications",
+    "phone_empty": "Nothing yet. Enjoy it while it lasts.",
+    "close": "Close",
+    "me": "Me"
+  },
+
+  "title": {
+    "line1": "BUSINESS",
+    "line2": "AS USUAL",
+    "chip": "Prototype 001 · Welcome to the Company",
+    "start": "Start your first day",
+    "settings": "Settings",
+    "quit": "Quit",
+    "footer": "All companies, people, software, currencies and biscuits are fictional. Any resemblance to your Monday is a coincidence.",
+    "board": "PEOPLE\nPROJECTS\nPROGRESS\nPROFIT\nand a bit of chaos :)"
+  },
+
+  "settings": {
+    "title": "Settings",
+    "music": "Music",
+    "sfx": "Sound effects",
+    "text_speed": "Text speed",
+    "blips": "Voice blips while talking",
+    "fullscreen": "Fullscreen",
+    "language": "Language: English. Dansk, Vlaams and Français (Belgique) are planned — every line of text lives in data/text/."
+  },
+
+  "pause": {
+    "title": "Paused",
+    "sub": "The office keeps going without you. That’s the scary part.",
+    "resume": "Back to work",
+    "restart": "Restart the day"
+  },
+
+  "captions": {
+    "day1_big": "Monday, 08:57",
+    "day1_small": "Day 1 · Northbound Consulting",
+    "after_meeting_big": "10:47",
+    "after_meeting_small": "The ten-minute meeting has ended. Nothing was decided.",
+    "after_lunch_big": "14:10",
+    "after_lunch_small": "After lunch. Sanne has built the change. Allegedly.",
+    "end_big": "Day 1: Complete",
+    "end_small": "You survived. Mostly."
+  },
+
+  "obj": {
+    "reception": "Report to reception",
+    "meet": "Say hello to your new colleagues ({n}/3)",
+    "meeting": "Attend Chad’s 10:00 meeting (Meeting Room)",
+    "email": "Read the URGENT email on your laptop (your desk)",
+    "spec": "Write the handover for Sanne — talk to Tobias",
+    "handover": "Bring the handover to Sanne",
+    "test": "Test the change on Sanne’s computer",
+    "deploy": "Ask Bogdan to deploy to production",
+    "cake": "Celebrate! There’s cake in the kitchen"
+  },
+
+  "names": {
+    "chad": "Chad Pemberton-Vance",
+    "gerald": "Gerald Pettigrew",
+    "tobias": "Tobias Grant",
+    "tobias_short": "Tobias",
+    "dagmar": "Dagmar Holm",
+    "dagmar_short": "Dagmar",
+    "maggie": "Maggie Fairweather",
+    "kevin": "Kevin Okoro",
+    "system": "NorthOS"
+  },
+
+  "threads": {
+    "general": "#general",
+    "dagmar": "Dagmar Holm · Crumbworth"
+  },
+
+  "apps": {
+    "mail": "Pigeon",
+    "chat": "Natter",
+    "tasks": "TaskPile",
+    "calendar": "Calendar",
+    "rail_note": "NorthOS 11 · Licensed to Northbound Consulting. Do not argue with the coffee machine.",
+    "title": "{name}’s laptop",
+    "mail_from": "From {from} · {time}",
+    "reply_with": "REPLY",
+    "typing": "{name} is typing…"
+  },
+
+  "hover": {
+    "talk": "Talk to {name}",
+    "laptop": "Your laptop",
+    "coffee": "Coffee machine (on the Wi-Fi)",
+    "fridge": "Office fridge",
+    "cake": "Lemon drizzle cake (multi-purpose)",
+    "chalkboard": "Kitchen chalkboard",
+    "printer": "Printer (temperamental)",
+    "whiteboard": "Whiteboard",
+    "duck": "Rubber duck",
+    "pia_bell": "Pia’s deal bell",
+    "parental": "Somebody’s desk",
+    "bell": "Reception bell",
+    "sofa": "Visitor sofa",
+    "magazines": "Magazines",
+    "meeting": "Meeting room",
+    "war_status": "Project status board",
+    "war_budget": "Budget chart",
+    "war_margin": "Profit margin chart",
+    "war_risk": "Risk register",
+    "trophy": "Trophy",
+    "poster": "Inspirational poster",
+    "yacht": "Framed photo",
+    "golf": "Putting green",
+    "servers": "Server racks"
+  },
+
+  "world": {
+    "doormat": "WELCOME (BACK)",
+    "art_west": "Quarterly Abstract No. 4",
+    "art_east": "Synergy in Teal",
+    "room_meeting": "MEETING ROOM",
+    "room_war": "WAR ROOM",
+    "room_chad": "C. PEMBERTON-VANCE · DIRECTOR",
+    "room_servers": "INFRASTRUCTURE",
+    "trophy": "THOUGHT LEADER\nOF THE YEAR",
+    "chad_nameplate": "CHAD · VISIONARY",
+    "poster_title": "SYNERGY",
+    "poster_sub": "Because none of us is as confident as me.",
+    "network_sign": "IT’S NOT THE NETWORK",
+    "coffee_sign": "ON WI-FI.\nDO NOT ARGUE WITH IT.",
+    "chalk_title": "TODAY’S CAKE",
+    "chalk_body": "Lemon Drizzle\n(multi-purpose)\n\nCake is a\nleading indicator.",
+    "whiteboard": "PEOPLE\nPROJECTS\nPROGRESS\nPROFIT\nand a bit of chaos :)",
+    "mug": "GOOD\nIDEAS\n(USUALLY)",
+    "desk_sign": "✓ PLAN\n✓ PROGRESS\n✓ PROFIT\n✓ REPEAT",
+    "sanne_sign": "DO NOT DISTURB.\nDISTURBING ALSO NOT ALLOWED.",
+    "logo": "NORTHBOUND",
+    "logo_tag": "CONSULTING · We go where the requirements take us.",
+    "magazine": "ERP\nMONTHLY",
+    "crate": "CRUMBWORTH\nFRAGILE · BISCUITS"
+  },
+
+  "screens": {
+    "meeting_idle_kicker": "MEETING ROOM",
+    "meeting_idle_title": "Available",
+    "meeting_idle_sub": "(for now)",
+    "meeting_after_title": "Alignment Sync (2 of 6)",
+    "meeting_after_sub": "Tomorrow, 09:00. Mandatory. Optional.",
+    "align_kicker": "ALIGNMENT SYNC (1 of 6)",
+    "align_title": "Reducing Meeting Overload",
+    "align_sub": "A meeting about meetings",
+    "align_bullets": ["Too many meetings", "Schedule meetings to discuss", "Repeat until aligned"],
+    "syn_kicker": "INTRODUCING",
+    "syn_title": "SYNERGIA",
+    "syn_sub": "AI-powered Synergy™ · Holistic · At Scale",
+    "syn_footer": "Roadmap: TBD · Budget: Yes",
+    "road_kicker": "SYNERGIA ROADMAP",
+    "road_title": "Phase 1: Vibes",
+    "road_bullets": ["Q1: Logo ✓", "Q2: Find out what it does", "Q3: Do that, but with AI"],
+    "war_status_title": "PROJECT CRUMB · STATUS",
+    "war_status_big": "ON TRACK",
+    "war_status_caption": "Overall health: strategically green",
+    "war_status_foot": "Status self-reported by the project sponsor",
+    "war_status_big2": "ON TRACK",
+    "war_status_caption2": "Everything is green. Literally everything.",
+    "war_status_foot2": "Conveyor belts: green · Ovens: green · Gerald: red",
+    "war_budget_title": "BUDGET vs ACTUAL (¤ thousands)",
+    "q1": "Q1", "q2": "Q2", "q3": "Q3", "q4": "Q4",
+    "budget": "Budget",
+    "war_budget_note": "Variance =\ninvestment in\nlearning! — C.",
+    "war_margin_title": "PROFIT MARGIN",
+    "war_margin_arrow": "MOMENTUM!",
+    "war_margin_arrow2": "BISCUITS!",
+    "today": "Today",
+    "risk_title": "RISK REGISTER",
+    "risk_1": "1. Gerald",
+    "risk_2": "2. Gerald (again)",
+    "risk_3": "3. FloorLink — deprecated, probably fine",
+    "risk_4": "4. SYNERGIA — scope: TBD",
+    "risk_5": "5. Cake shortage"
+  },
+
+  "roles": {
+    "player": "Junior Consultant · Day 1",
+    "gerald": "Head of Operations · Crumbworth Biscuits Ltd",
+    "dagmar": "Warehouse Supervisor · Crumbworth Biscuits Ltd"
+  },
+
+  "toasts": {
+    "invite": "Chad invited you: ‘Alignment Sync: Reducing Meeting Overload (1 of 6)’ · 10:00 · Meeting Room. You accepted automatically. Enthusiastically.",
+    "meeting_soon": "Starting now: ‘Alignment Sync (1 of 6)’. Chad is already presenting to an empty room.",
+    "gerald_urgent": "URGENT!!! RE: RE: FW: RE: Button",
+    "gerald_followup": "URGENT: ALSO",
+    "close_laptop": "Got it! Close the laptop when you’re ready, then go and write the handover.",
+    "gerald_uat": "RE: URGENT: Button — TESTED. ‘It looks fine. Release it.’",
+    "chad_general": "Huge congrats, team, on our first AI-powered release! #SYNERGIA #HyperAlignment",
+    "dagmar_1": "Quick question. Why are all the conveyor belt lights green?",
+    "dagmar_2": "Second quick question. Why are the ovens on maximum. And why is the packing robot packing the other packing robot.",
+    "gerald_panic_1": "URGENT URGENT URGENT",
+    "gerald_panic_2": "BISCUITS EVERYWHERE",
+    "gerald_panic_3": "CALL ME. CALL ME NOW. I AM CALLING YOU.",
+    "dagmar_twist": "Update: a supermarket chain wants 4 million biscuits by Friday. We have them. Production record broken by 340%. Gerald is taking the credit. I am mildly impressed with you. Again.",
+    "gerald_thanks": "URGENT: THANK YOU!!!",
+    "gerald_final": "URGENT: Re: the button"
+  },
+
+  "barks_special": {
+    "chad_invite": "Calendar invites: sent. Leadership: demonstrated.",
+    "chad_synergy": "SYNERGY ACHIEVED!",
+    "pia_deploy": "Ooh! Somebody shipped something!",
+    "me": "Me."
+  },
+
+  "barks": {
+    "tobias": ["No, Henrik.", "Yes, Henrik.", "Henrik, I’m going into a tunnel. …In the office.", "Who changed the requirements? …Me? When?", "Let me just quickly… (four hours)"],
+    "sanne": ["Hmm.", "Why does this work?", "Why doesn’t this work?", "Who wrote this? …Oh. Me.", "Please stop pinging me."],
+    "kevin": ["Found it! …No. Lost it.", "Who expensed a yacht?", "This spreadsheet has feelings."],
+    "pia": ["Closed another one!", "Yes, it does that! …Does it do that?", "Let’s jump on a quick call!"],
+    "olu": ["Has anyone seen my Gantt chart?", "We’re only slightly red. Burgundy, really.", "Status update: status is being updated."],
+    "bogdan": ["It’s not the network.", "Who restarted the coffee machine?", "Patch Tuesday. On a Monday. Again."],
+    "chad": ["Let’s circle back… to the circle.", "Think big. Bill bigger.", "Synergy!", "Hyper-alignment!"],
+    "maggie": ["Anyone for cake?", "Drink some water, everyone!", "Whose birthday is it? …Somebody’s, surely."]
+  },
+
+  "chat": {
+    "general_1": "Reminder: today is Bring Your Synergy To Work Day!",
+    "general_2": "Cake in the kitchen! Lemon drizzle. It’s for the new starter, Tobias’s divorce and the printer.",
+    "general_3": "Who expensed a yacht?",
+    "tobias_tip_1": "Pro tip: don’t ask Gerald. Ask Dagmar in their warehouse. She actually uses the system. I’ve added her to your Natter.",
+    "tobias_tip_2": "Gerald uses Monolith the way I use the gym. Proudly. In theory."
+  },
+
+  "replies": {
+    "gerald_1": [
+      "Which button do you mean, exactly?",
+      "Could you send me a screenshot?",
+      "Have you tried turning the button off and on again?"
+    ]
+  },
+
+  "mails": {
+    "maggie_cake": {
+      "from_name": "Maggie Fairweather",
+      "subject": "Cake rota (IMPORTANT, but not URGENT)",
+      "preview": "Monday: lemon drizzle (new starter / Tobias’s divorce / the printer)…",
+      "time": "08:02",
+      "urgent": false,
+      "body": "Hello lovelies!\n\nCake rota for the week:\n• Monday: lemon drizzle (new starter / Tobias’s divorce / the printer)\n• Tuesday: carrot cake (Kevin found a rounding error)\n• Wednesday: Victoria sponge (Kevin lost the rounding error)\n• Friday: chocolate (the first birthday of Chad’s yacht)\n\nPlease note: SYNERGIA will [b]not[/b] be baking.\n\nHugs,\nMaggie x"
+    },
+    "chad_buzzword": {
+      "from_name": "Chad Pemberton-Vance",
+      "subject": "FYI: Buzzword of the Week",
+      "preview": "This week’s buzzword is HYPER-ALIGNMENT.",
+      "time": "07:12",
+      "urgent": false,
+      "body": "Team,\n\nThis week’s buzzword is [b]HYPER-ALIGNMENT[/b].\n\nPlease use it in at least three client meetings. Use it in a sentence. Use it in a paragraph. Use it as a verb, if you dare.\n\nLast week’s buzzword (‘Synergetic Velocity’) is now deprecated.\n\nOnwards & upwards,\nChad\nDirector of Strategic Transformation\n[i]‘Transforming Strategy, Strategically.’[/i]"
+    },
+    "security": {
+      "from_name": "Northbound IT Security",
+      "subject": "Phishing test: you passed!",
+      "preview": "Congratulations on not clicking ‘FREE CAKE — CLICK HERE’.",
+      "time": "Yesterday",
+      "urgent": false,
+      "body": "Congratulations!\n\nYou did not click the link in our simulated phishing email ‘FREE CAKE — CLICK HERE’.\n\nMaggie clicked it four times. She would like to know where the cake is.\n\n— Bogdan\n(IT Security. Also Infrastructure. Also the coffee machine.)"
+    },
+    "vendor": {
+      "from_name": "Monolith Systems Licensing",
+      "subject": "Your licence renewal: ¤ 480,000",
+      "preview": "Thank you for being a Valued Customer™…",
+      "time": "Yesterday",
+      "urgent": false,
+      "body": "Dear Valued Customer™,\n\nThank you for choosing Monolith ERP 11 (Cloud Edition, Mostly).\n\nYour annual licence renewal is [b]¤ 480,000[/b]. This includes:\n• The software\n• The right to use the software\n• The right to be audited about using the software\n\nPrices now include AI. You cannot opt out of the AI. The AI cannot opt out of you.\n\nKind regards,\nMonolith Systems\n[i]Built To Last. Built To Be Licensed.[/i]"
+    },
+    "gerald_urgent": {
+      "from_name": "Gerald Pettigrew (Crumbworth Biscuits)",
+      "subject": "URGENT!!! RE: RE: FW: RE: Button",
+      "preview": "The button is wrong.",
+      "time": "10:31",
+      "urgent": true,
+      "body": "Hello,\n\nThe button is wrong.\n\nPlease fix it TODAY. This is costing us money.\n\nRegards,\n[b]Gerald Pettigrew[/b]\nHead of Operations\nCrumbworth Biscuits Ltd — [i]‘Crumbs, that’s good!’[/i]\n\n[color=#8a94a6]Sent from my tablet. Please excuse brevity, typos and tone.[/color]"
+    },
+    "gerald_reply_which": {
+      "from_name": "Gerald Pettigrew (Crumbworth Biscuits)",
+      "subject": "RE: URGENT!!! RE: RE: FW: RE: Button",
+      "preview": "THE button. Obviously.",
+      "time": "10:52",
+      "urgent": true,
+      "body": "THE button.\n\nObviously.\n\nG."
+    },
+    "gerald_reply_screenshot": {
+      "from_name": "Gerald Pettigrew (Crumbworth Biscuits)",
+      "subject": "RE: URGENT!!! RE: RE: FW: RE: Button",
+      "preview": "See attached.",
+      "time": "10:52",
+      "urgent": true,
+      "body": "See attached.\n\nG.\n\n[color=#3d7be0]📎 IMG_4471.jpg[/color]\n[i](A blurry photo of a monitor, taken from across the room, at an angle. It is mostly thumb.)[/i]"
+    },
+    "gerald_reply_clever": {
+      "from_name": "Gerald Pettigrew (Crumbworth Biscuits)",
+      "subject": "RE: URGENT!!! RE: RE: FW: RE: Button",
+      "preview": "DON’T GET CLEVER WITH ME.",
+      "time": "10:52",
+      "urgent": true,
+      "body": "DON’T GET CLEVER WITH ME.\n\nI have been in biscuits for thirty-one years.\n\nG."
+    },
+    "gerald_followup": {
+      "from_name": "Gerald Pettigrew (Crumbworth Biscuits)",
+      "subject": "URGENT: ALSO",
+      "preview": "ALSO make it POP.",
+      "time": "11:20",
+      "urgent": true,
+      "body": "ALSO make it POP.\n\nAnd our Board wants AI in it. Every system needs AI now. I read it in an airport.\n\nG."
+    },
+    "gerald_uat": {
+      "from_name": "Gerald Pettigrew (Crumbworth Biscuits)",
+      "subject": "RE: URGENT: Button — TESTED",
+      "preview": "It looks fine. Release it.",
+      "time": "15:12",
+      "urgent": true,
+      "body": "I have tested it.\n\nIt looks fine.\n\nRelease it today. URGENT.\n\nG.\n\nP.S. I tested it on my phone, in the car park. Very thorough."
+    },
+    "gerald_thanks": {
+      "from_name": "Gerald Pettigrew (Crumbworth Biscuits)",
+      "subject": "URGENT: THANK YOU!!!",
+      "preview": "The Board is DELIGHTED.",
+      "time": "16:58",
+      "urgent": true,
+      "body": "Hello,\n\nThe Board is DELIGHTED with our new AI-powered production optimisation.\n\nRecord output. Record orders. Record number of biscuits in the car park.\n\nPlease do it again next quarter. Please send invoice.\n\nWe have sent you some biscuits.\n\nG.\n\nP.S. I have been nominated for Innovator of the Year. I would like to thank: me."
+    },
+    "gerald_final": {
+      "from_name": "Gerald Pettigrew (Crumbworth Biscuits)",
+      "subject": "URGENT: Re: the button",
+      "preview": "Can we make the DELETE button green as well?",
+      "time": "17:31",
+      "urgent": true,
+      "body": "Hello,\n\nCan we also make the DELETE button green?\n\nMy staff are now scared of how fast everything goes.\n\nG."
+    }
+  },
+
+  "chatscript": {
+    "dagmar": [
+      {"choice": [{"t": "Hi Dagmar! I’m the new consultant at Northbound. Gerald says ‘the button is wrong’. Any idea which button?", "id": "ask"}]},
+      {"s": "dagmar", "t": "Yes."},
+      {"s": "dagmar", "t": "Dispatch screen. ‘Approve Shipment’. It’s red."},
+      {"s": "dagmar", "t": "‘Delete Shipment’ is also red. They sit next to each other. Four millimetres apart."},
+      {"s": "dagmar", "t": "My team hesitates before every approval. 1,400 shipments a day, three seconds of fear each. That’s seventy minutes of daily fear.", "set": "req_green"},
+      {"choice": [
+        {"t": "That’s… a surprisingly precise amount of fear.", "id": "fear", "then": [{"s": "dagmar", "t": "I measure everything. It’s how I stay calm."}]},
+        {"t": "Why didn’t Gerald just say that?", "id": "why", "then": [{"s": "dagmar", "t": "Gerald believes the warehouse is a room where biscuits go to be sad."}]}
+      ]},
+      {"s": "dagmar", "t": "So. Please write this down."},
+      {"s": "dagmar", "t": "1) Make ‘Approve’ green.\n2) Move it well away from ‘Delete’.", "set": "req_move"},
+      {"s": "dagmar", "t": "3) Change NOTHING else. Last time someone ‘improved’ our system, the forklifts got a login screen.", "set": "req_nothing"},
+      {"s": "dagmar", "t": "Also: do not touch FloorLink. Nobody knows how it works. The man who built it in 2011 now makes cheese in France.", "set": "req_floorlink"},
+      {"choice": [
+        {"t": "Crystal clear. Thank you, Dagmar — you’re a lifesaver!", "id": "thanks"},
+        {"t": "What is FloorLink, exactly?", "id": "floorlink", "then": [
+          {"s": "dagmar", "t": "It connects the ERP to the factory floor. Conveyor belts, ovens, the little traffic lights."},
+          {"s": "dagmar", "t": "It has no documentation. It has a sticky note. The sticky note says ‘DON’T’."}
+        ]}
+      ]},
+      {"s": "dagmar", "t": "You are the first consultant to ask me anything since 2019. I am mildly impressed.", "set": "dagmar_impressed"},
+      {"s": "dagmar", "t": "Mildly is my maximum."}
+    ]
+  },
+
+  "tasks": {
+    "board_title": "TaskPile · Crumbworth Biscuits Ltd",
+    "board_sub": "Sprint 47 · Sprint goal: ‘Fewer surprises’ (stretch goal)",
+    "columns": [
+      {"name": "TO DO", "cards": [
+        {"t": "CR-0451 · ‘The button’ (URGENT)", "color": "#ffe0e0"},
+        {"t": "CR-0388 · Make the logo bigger. And smaller.", "color": "#fff8ec"},
+        {"t": "CR-0402 · Why do invoices print in Comic Sans on Thursdays?", "color": "#fff8ec"}
+      ]},
+      {"name": "DOING", "cards": [
+        {"t": "CR-0399 · Add AI (scope: unclear)", "color": "#efe9ff"},
+        {"t": "CR-0417 · Rename ‘Customer’ to ‘Client’ to ‘Customer’", "color": "#fff8ec"}
+      ]},
+      {"name": "TESTING", "cards": [
+        {"t": "CR-0310 · Remove the forklift login screen (rollback)", "color": "#e6f4ff"}
+      ]},
+      {"name": "DONE", "cards": [
+        {"t": "CR-0001 · Install Monolith ERP (2016–2024)", "color": "#e3f6e9"},
+        {"t": "CR-0299 · Remove the ‘Are you sure?’ dialog from the ‘Are you sure?’ dialog", "color": "#e3f6e9"}
+      ]}
+    ]
+  },
+
+  "spec": {
+    "title": "Handover · CR-0451",
+    "sub": "Turn what you learned into a specification for Sanne. Click notes to add or remove them. Developers build exactly what you write. Exactly.",
+    "notes": "NOTES YOU’VE COLLECTED",
+    "doc_title": "CR-0451 · Dispatch screen: ‘Approve Shipment’ button",
+    "doc_meta": "Client: Crumbworth Biscuits Ltd · Author: you · Reviewer: nobody (as usual)",
+    "doc_requirements": "REQUIREMENTS",
+    "doc_empty": "(empty — a bold artistic choice)",
+    "estimate": "ESTIMATE",
+    "hint": "Tip: write down what the client needs, not everything everybody said.",
+    "submit": "Hand over to Sanne ➜",
+    "empty": "A spec with nothing in it is just a mood. Add at least one note.",
+    "notes_list": [
+      {"id": "green", "t": "Make the ‘Approve Shipment’ button green", "src": "Dagmar", "good": true, "needs": "req_green"},
+      {"id": "move", "t": "Move ‘Approve’ well away from ‘Delete Shipment’", "src": "Dagmar", "good": true, "needs": "req_move"},
+      {"id": "nothing_else", "t": "Change nothing else. Nothing. At all.", "src": "Dagmar", "good": true, "needs": "req_nothing"},
+      {"id": "floorlink", "t": "Do not touch FloorLink (the 2011 integration)", "src": "Dagmar", "good": true, "needs": "req_floorlink"},
+      {"id": "vague", "t": "Make button green", "src": "Gerald (sort of)", "good": false},
+      {"id": "pop", "t": "Make it POP", "src": "Gerald", "good": false, "needs": "req_pop"},
+      {"id": "ai", "t": "Add AI", "src": "Gerald’s board", "good": false, "needs": "req_ai"},
+      {"id": "synergia", "t": "Leverage Project SYNERGIA where possible", "src": "Chad", "good": false}
+    ],
+    "estimates": [
+      {"id": "2h", "t": "2 hours"},
+      {"id": "2d", "t": "2 days"},
+      {"id": "pi", "t": "2 weeks (Tobias’s rule: ×π)"}
+    ]
+  },
+
+  "erp": {
+    "title": "TEST environment · Dispatch",
+    "sub": "Click around like a warehouse worker on their third coffee. Check the buttons. Read the warnings.",
+    "test_banner": "TEST ENVIRONMENT — the data is fake, the consequences are real",
+    "screen_title": "Dispatch › Shipment SH-2025-11873",
+    "fields": [
+      ["Customer", "Hungry Hippo Supermarkets"],
+      ["Product", "Ginger Snaps, Family Pack"],
+      ["Pallets", "14"],
+      ["Ship date", "Today (URGENT)"]
+    ],
+    "status_idle": "Status: waiting for a brave click",
+    "approve": "Approve Shipment",
+    "delete": "Delete Shipment",
+    "print": "Print",
+    "ai_tooltip": "Powered by AI. (It isn’t.)",
+    "warn_chip": "⚠ 1 warning (click to expand)",
+    "warn_text": "[b]Warning MON-4471:[/b] theme variable [code]colour.approve[/code] is also referenced by [b]FLOORLINK_IOT_BRIDGE[/b] (last modified: 2011 · owner: j.moreau · status: left company · current occupation: cheese).",
+    "checklist": "TEST CHECKLIST",
+    "check_approve": "‘Approve’ works and is green",
+    "check_delete": "‘Delete’ still does what it says",
+    "check_warn": "Read the warnings",
+    "flag": "⚑ Flag the FloorLink risk to the team",
+    "flagged": "✓ Flagged. Bogdan will call it ‘deprecated’.",
+    "release": "Approve for release ➜",
+    "status_approved": "✓ Shipment approved. Warehouse morale +3%.",
+    "status_deleted": "Shipment deleted. (It was a test shipment. Rest in peace.)",
+    "status_deleted_bad": "Shipment deleted. Confidently. Because it was green.",
+    "status_print": "Printing… to a printer that isn’t connected. Classic."
+  },
+
+  "deploy": {
+    "title": "PRODUCTION DEPLOYMENT",
+    "sub": "Change CR-0451 · Crumbworth Biscuits Ltd · Approved by: Gerald (on his phone, in a car park)",
+    "button": "DEPLOY",
+    "cover": "SAFETY COVER\n(click to lift)",
+    "steps": [
+      "Compiling ambitions…",
+      "Backing up the database (just in case)…",
+      "Migrating 14 tables and one feeling…",
+      "Asking the production server nicely…",
+      "Reticulating synergies…",
+      "Flushing caches (and Bogdan’s blood pressure)…",
+      "Restarting services…"
+    ],
+    "done": "✓ Deployed! Nothing is on fire. Yet."
+  },
+
+  "call": {
+    "live": "LIVE",
+    "quality": "Connection: excellent (unfortunately)",
+    "mute": "Mute",
+    "hangup": "Hang up",
+    "system": "Natter",
+    "no_hangup": "You can’t hang up on a client. Client-first policy, section 4.2.",
+    "with": "Natter Call · {name}"
+  },
+
+  "review": {
+    "kicker": "NORTHBOUND CONSULTING · PEOPLE & HAPPINESS",
+    "title": "First-Day Performance Review",
+    "sub": "Reviewed by Maggie Fairweather (happiness) and Chad Pemberton-Vance (vision)",
+    "again": "Start Day 1 again",
+    "quit": "Quit to desktop",
+    "stamp": "SURVIVED",
+    "promo": "New title: Junior Consultant ★ — Survivor of Production Monday",
+    "unlock": "Unlocked: Senior Rubber Duck (desk upgrade) · Coming next: Day 2 — ‘The Steering Committee’",
+    "r_spec": "Specification quality",
+    "spec_great_v": "A+",
+    "spec_great_c": "Sanne cried a little. Tobias is framing it.",
+    "spec_ok_v": "B",
+    "spec_ok_c": "Mostly complete. Some vibes.",
+    "spec_bad_v": "C−",
+    "spec_bad_c": "Words were present.",
+    "spec_tobias_v": "N/A",
+    "spec_tobias_c": "Delegated to a man on four calls. ‘Make button green.’",
+    "r_test": "Testing",
+    "test_good_v": "Thorough",
+    "test_good_c": "You clicked Delete on purpose. Brave.",
+    "test_bad_v": "Optimistic",
+    "test_bad_c": "Industry standard.",
+    "r_risk": "Risk flagged (FloorLink)",
+    "risk_yes_v": "Yes",
+    "risk_yes_c": "Politely ignored by everyone. Standard procedure. You were right.",
+    "risk_no_v": "No",
+    "risk_no_c": "Nobody would have listened anyway.",
+    "r_client": "Client satisfaction",
+    "client_v": "Furious → Ecstatic",
+    "client_c": "Gerald: confused but thrilled. Dagmar: mildly impressed — her maximum.",
+    "r_biscuits": "Biscuits received",
+    "biscuits_v": "2.4 tonnes",
+    "biscuits_c": "Kevin has filed them under ‘inventory’.",
+    "r_billed": "Billed today",
+    "billed_c": "{hours} h × {rate}. Plus change request ‘Biscuit Throughput Optimisation’: {cr}.",
+    "r_chad": "Chad’s assessment",
+    "chad_v": "‘Great energy!’",
+    "chad_c": "He says this about everyone, including the printer.",
+    "chad_bold_v": "‘Bold. Noted.’",
+    "chad_bold_c": "You suggested that AI replace management. It is in your file. Twice. Bogdan has framed it."
+  },
+
+  "dialogue": {
+
+    "maggie_arrival": [
+      {"s": "maggie", "t": "Oh! You must be {player}! Our new junior consultant! Welcome, welcome, welcome!", "e": "joy", "g": "wave"},
+      {"s": "maggie", "t": "I’m Maggie — Head of People & Happiness. Mostly happiness. People are harder.", "e": "happy"},
+      {"s": "maggie", "t": "I baked a lemon drizzle cake for your first day. It’s also for Tobias’s divorce. And the new printer. It’s a multi-purpose cake.", "e": "joy"},
+      {"choice": [
+        {"t": "That’s so lovely, thank you!", "id": "thanks", "stat": {"team": 1}, "then": [
+          {"s": "maggie", "t": "Oh, stop it. You’ll make me bake another one. I will, you know. I have no off switch.", "e": "joy"}
+        ]},
+        {"t": "Is the divorce… a celebration?", "id": "divorce", "then": [
+          {"s": "maggie", "t": "He says it is. He’s very hard to read. He said the same about his wedding.", "e": "worried"},
+          {"s": "maggie", "t": "Have some cake either way, love. Cake is emotionally neutral.", "e": "happy"}
+        ]},
+        {"t": "I’m gluten intolerant, actually.", "id": "gluten", "then": [
+          {"s": "maggie", "t": "Of course you are, dear. There’s a gluten-free one in the fridge. And a vegan one. And one for Kevin, who only eats beige food.", "e": "happy"},
+          {"s": "maggie", "t": "I’ve been doing this for a very long time.", "e": "smug"}
+        ]}
+      ]},
+      {"s": "maggie", "t": "Now — your badge!", "e": "happy", "g": "present"},
+      {"s": "narrator", "t": "Maggie hands you a lanyard. The badge says VISITOR in large, accusing letters."},
+      {"s": "player", "t": "It says ‘visitor’.", "e": "worried"},
+      {"s": "maggie", "t": "Yes. The access system thinks you’re a visitor until Bogdan from Infrastructure approves you. He’s very thorough.", "e": "worried"},
+      {"s": "maggie", "t": "Last summer an intern was a visitor for six weeks. He got a visitor’s lanyard as a leaving present.", "e": "sad"},
+      {"s": "maggie", "t": "Go and say hello to the team! Tobias and Sanne are at the desks, and Bogdan lives near the servers. Not literally. We think.", "e": "happy", "g": "point"},
+      {"s": "maggie", "t": "Oh, and Chad wants everyone in the meeting room at ten. He has… an announcement.", "e": "worried"},
+      {"s": "player", "t": "What kind of announcement?", "e": "neutral"},
+      {"s": "maggie", "t": "The kind with a logo.", "e": "deadpan"}
+    ],
+
+    "tobias_meet": [
+      {"s": "tobias", "t": "— no, Henrik, the invoice module is not haunted. It’s configured. Those are different things. Mostly.", "e": "worried"},
+      {"s": "tobias", "t": "Henrik, I’ll call you back. No, I won’t. Yes, I will. Bye.", "e": "worried", "g": "facepalm"},
+      {"s": "tobias", "t": "Hi! You’re the new junior? Great. Brilliant. I’m Tobias, senior functional consultant. I have eleven projects. I’m aware of four of them.", "e": "happy"},
+      {"s": "tobias", "t": "Do you know anything about Monolith ERP?", "e": "neutral"},
+      {"choice": [
+        {"t": "A little!", "id": "little", "then": [
+          {"s": "tobias", "t": "That already puts you ahead of most of our clients. And one of our partners.", "e": "smug"}
+        ]},
+        {"t": "I read the documentation.", "id": "docs", "then": [
+          {"s": "tobias", "t": "Oh, you poor thing. The documentation describes version 9. We’re on version 11.", "e": "sad"},
+          {"s": "tobias", "t": "The software itself describes version ‘it depends’.", "e": "deadpan"}
+        ]},
+        {"t": "Is that the one whose logo looks like a fridge?", "id": "fridge", "stat": {"team": 1}, "then": [
+          {"s": "tobias", "t": "It IS a fridge! Their designer quit halfway through the rebrand. Nobody dared to change it. It’s been a fridge for six years.", "e": "joy"}
+        ]}
+      ]},
+      {"s": "tobias", "t": "Rule one of consulting: the client never asks for what they need.", "e": "neutral", "g": "point"},
+      {"s": "tobias", "t": "Rule two: they need it by Friday.", "e": "worried"},
+      {"s": "tobias", "t": "Rule three… I had a rule three. I wrote it down somewhere. Probably in a ticket. Probably in a ticket I closed.", "e": "worried", "g": "shrug"},
+      {"s": "narrator", "t": "Tobias’s headset beeps. His soul visibly leaves his body and then, professionally, comes back."},
+      {"s": "tobias", "t": "Henrik. Hi. Yes. I said I’d call you back. This is me. Being called. Back.", "e": "deadpan", "g": "slump"}
+    ],
+
+    "sanne_meet": [
+      {"s": "narrator", "t": "Sanne is wearing enormous headphones and typing at a speed that suggests a personal grievance."},
+      {"s": "sanne", "t": "…", "e": "deadpan"},
+      {"s": "narrator", "t": "She slowly removes one headphone. Exactly one."},
+      {"s": "sanne", "t": "Is it urgent?", "e": "deadpan"},
+      {"choice": [
+        {"t": "No! Just saying hello.", "id": "hello", "stat": {"team": 1}, "then": [
+          {"s": "sanne", "t": "Oh.", "e": "shock"},
+          {"s": "sanne", "t": "That’s nice. That’s… genuinely nice. Nobody walks over here unless something is on fire.", "e": "happy"}
+        ]},
+        {"t": "Sort of?", "id": "sortof", "then": [
+          {"s": "sanne", "t": "‘Sort of urgent’ is my least favourite kind of urgent. It’s urgent, minus the information.", "e": "angry"}
+        ]},
+        {"t": "Are you the one who fixes things?", "id": "fixes", "then": [
+          {"s": "sanne", "t": "I’m the one who builds things. Then people tell me it’s not what they meant. Then I build it again.", "e": "deadpan"},
+          {"s": "sanne", "t": "It’s like Groundhog Day, except the groundhog writes the requirements.", "e": "deadpan"}
+        ]}
+      ]},
+      {"s": "sanne", "t": "I’m Sanne. Developer. One tip, since you’re new.", "e": "neutral"},
+      {"s": "sanne", "t": "If Tobias hands you a spec that’s one line long, it is not a spec. It’s a cry for help.", "e": "deadpan", "g": "point"},
+      {"s": "sanne", "t": "Right. Back to the code. It doesn’t talk back. Well. It does. But in red.", "e": "neutral"}
+    ],
+
+    "bogdan_meet": [
+      {"s": "bogdan", "t": "You’re the visitor.", "e": "deadpan"},
+      {"s": "player", "t": "I’m the new junior consultant, actually!", "e": "happy"},
+      {"s": "bogdan", "t": "Badge says visitor.", "e": "deadpan"},
+      {"s": "narrator", "t": "A long pause. Somewhere, a server fan spins up, as if to underline it."},
+      {"s": "bogdan", "t": "I am Bogdan. Infrastructure. Servers, databases, networks, security, backups, environments, deployments.", "e": "deadpan"},
+      {"s": "bogdan", "t": "And the coffee machine. Because someone connected it to the Wi-Fi, and nobody else would take responsibility.", "e": "angry"},
+      {"s": "bogdan", "t": "Now. Your password. Twelve characters, one uppercase, one number, one symbol, one regret. No word found in any dictionary, including Klingon.", "e": "deadpan"},
+      {"choice": [
+        {"t": "Password1!", "id": "pw_bad", "then": [
+          {"s": "bogdan", "t": "Rejected. Also, I have reported you to yourself.", "e": "angry"},
+          {"s": "bogdan", "t": "…I will pretend you said something else. Accepted. Do not tell Security. I am Security.", "e": "deadpan"}
+        ]},
+        {"t": "Correct-Horse-Battery-Staple-42?", "id": "pw_good", "stat": {"team": 1}, "then": [
+          {"s": "bogdan", "t": "Accepted.", "e": "shock"},
+          {"s": "bogdan", "t": "You have done this before. Suspicious. I like it.", "e": "smug"}
+        ]},
+        {"t": "ILoveBiscuits_2025!", "id": "pw_biscuit", "then": [
+          {"s": "bogdan", "t": "…Accepted. Very specific choice.", "e": "deadpan"},
+          {"s": "bogdan", "t": "I have a feeling this will be relevant later.", "e": "worried"}
+        ]}
+      ]},
+      {"s": "bogdan", "t": "Badge upgraded. You are now an employee. Your access level is ‘can open fridge’.", "e": "deadpan", "g": "nod"},
+      {"s": "bogdan", "t": "One more thing. If anything breaks: it is not the network.", "e": "deadpan", "g": "point"},
+      {"s": "player", "t": "But I haven’t told you what’s broken yet.", "e": "worried"},
+      {"s": "bogdan", "t": "Correct. And still, it is not the network.", "e": "smug"}
+    ],
+
+    "meeting": [
+      {"s": "chad", "t": "Team! Thank you all for joining this meeting about reducing the number of meetings.", "e": "smug", "g": "present"},
+      {"s": "chad", "t": "I’ve scheduled five follow-up meetings to track our progress.", "e": "joy"},
+      {"s": "tobias", "t": "…", "e": "deadpan"},
+      {"s": "chad", "t": "And please welcome our new junior, {player}! Great energy. Very… present. Love that. Love presence.", "e": "happy", "g": "point"},
+      {"s": "chad", "t": "Now. Big news. As of this morning, Northbound is an AI-first, people-centric, cloud-native, client-obsessed, future-forward consultancy.", "e": "smug", "g": "present"},
+      {"s": "tobias", "t": "What were we yesterday?", "e": "neutral"},
+      {"s": "chad", "t": "Yesterday, Tobias, we were lagging.", "e": "smug"},
+      {"event": "tv_synergia"},
+      {"s": "chad", "t": "Introducing… Project SYNERGIA.", "e": "joy", "g": "cheer"},
+      {"s": "chad", "t": "An AI that leverages our learnings to… synergise. Holistically. At scale.", "e": "smug", "g": "present"},
+      {"s": "sanne", "t": "What does it do?", "e": "deadpan"},
+      {"s": "chad", "t": "Great question. It’s on the roadmap.", "e": "happy"},
+      {"event": "tv_roadmap"},
+      {"s": "bogdan", "t": "Where does it run?", "e": "deadpan"},
+      {"s": "chad", "t": "In the cloud.", "e": "smug"},
+      {"s": "bogdan", "t": "Whose cloud?", "e": "deadpan"},
+      {"s": "chad", "t": "…The cloud.", "e": "worried"},
+      {"s": "narrator", "t": "Bogdan writes something down. Slowly. He underlines it twice."},
+      {"s": "maggie", "t": "Will SYNERGIA be bringing cake? Only I’ve got a rota.", "e": "happy"},
+      {"s": "chad", "t": "Maggie, cake is a legacy process.", "e": "smug"},
+      {"s": "maggie", "t": "Then I’ll be keeping my legacy, thank you, Chad.", "e": "smug"},
+      {"s": "chad", "t": "{player}! Fresh eyes! What do you think SYNERGIA should do first?", "e": "joy", "g": "point"},
+      {"choice": [
+        {"t": "Summarise meetings, so we have fewer of them?", "id": "summarise", "stat": {"chad": 1}, "then": [
+          {"s": "chad", "t": "LOVE it. Let’s set up a meeting to discuss it.", "e": "joy", "g": "cheer"},
+          {"s": "tobias", "t": "(quietly) And there it is.", "e": "deadpan"}
+        ]},
+        {"t": "Write the requirements for us?", "id": "requirements", "stat": {"team": 1}, "then": [
+          {"s": "narrator", "t": "Tobias turns towards you very, very slowly."},
+          {"s": "tobias", "t": "…Can it?", "e": "shock"},
+          {"s": "sanne", "t": "Please, no. The requirements are bad enough when humans hallucinate them.", "e": "angry"}
+        ]},
+        {"t": "Replace management?", "id": "replace", "stat": {"team": 2, "chad": -1}, "then": [
+          {"event": "awkward"},
+          {"s": "chad", "t": "Ha! Ha. HA. Fun. Fun energy. Noted.", "e": "worried"},
+          {"s": "chad", "t": "Noted… in your file.", "e": "smug"},
+          {"s": "bogdan", "t": "(whispering) Respect.", "e": "smug"}
+        ]}
+      ]},
+      {"event": "phone_buzz"},
+      {"s": "narrator", "t": "Your phone starts vibrating across the table, like it has somewhere better to be."},
+      {"s": "tobias", "t": "That’ll be Gerald. From Crumbworth Biscuits. Gerald’s emails are always urgent.", "e": "worried"},
+      {"s": "tobias", "t": "Last week he sent an URGENT email to tell us he’d be on holiday. With a read receipt.", "e": "deadpan"},
+      {"s": "chad", "t": "Fantastic! A learning opportunity! {player}, you own this. Tobias, support. I’ll be in my office… aligning things.", "e": "joy", "g": "present"},
+      {"s": "maggie", "t": "There’s cake in the kitchen when you need it, love. And you will need it.", "e": "worried"},
+      {"event": "phone_calm"},
+      {"s": "chad", "t": "Great meeting, everyone. Ten minutes! Very efficient.", "e": "smug"}
+    ],
+
+    "tobias_spec": [
+      {"s": "tobias", "t": "Ah, the Crumbworth button! Did Dagmar help?", "e": "happy"},
+      {"s": "player", "t": "Massively. I think I’ve got everything we need.", "e": "happy"},
+      {"s": "tobias", "t": "Beautiful. Now we write the handover for Sanne. In the trade we call this ‘the specification’. Sanne calls it ‘evidence’.", "e": "smug"},
+      {"s": "tobias", "t": "I can write it — I’ve got four minutes between calls — or you can write it yourself.", "e": "worried"},
+      {"choice": [
+        {"t": "I’ll write it myself.", "id": "self", "stat": {"team": 1}, "then": [
+          {"s": "tobias", "t": "Look at you. Initiative. I remember initiative. I’ll open the ticket in TaskPile for you.", "e": "joy"}
+        ]},
+        {"t": "You’re the expert — you write it.", "id": "tobias_writes", "then": [
+          {"s": "narrator", "t": "Tobias types for exactly four seconds."},
+          {"s": "tobias", "t": "Done! ‘Make button green.’ Concise. Elegant. Sanne will love it.", "e": "joy", "g": "cheer"},
+          {"s": "player", "t": "Shouldn’t it say which button? Or that it should move? Or something about FloorLink?", "e": "worried"},
+          {"s": "tobias", "t": "Details are what developers are for! …Is what I would say if I didn’t sit next to one.", "e": "worried"},
+          {"s": "tobias", "t": "Sorry — Henrik again. It’s fine. It’s probably fine.", "e": "worried", "g": "facepalm"}
+        ]}
+      ]}
+    ],
+
+    "tobias_spec_done": [
+      {"if": "spec_great", "s": "tobias", "t": "Let me see… acceptance criteria. Scope. A ‘do not touch’ list. Is this… is this a real specification?", "e": "shock"},
+      {"if": "spec_great", "s": "tobias", "t": "I’m going to frame this. Next to my divorce papers. They’re the only other document I’ve read all the way through.", "e": "joy"},
+      {"if": "spec_ok", "s": "tobias", "t": "Solid! A couple of things missing, a couple of extras… but honestly? Better than most of mine. Better than all of mine.", "e": "happy"},
+      {"if": "spec_bad", "s": "tobias", "t": "Hmm. It’s… got words in it. That’s a start. Sanne will have questions. Sanne always has questions.", "e": "worried"},
+      {"if": "spec_has_ai", "s": "tobias", "t": "You put ‘Add AI’ in. Gerald will love that. Sanne will… have feelings.", "e": "worried"},
+      {"if": "spec_has_synergia", "s": "tobias", "t": "And you mentioned SYNERGIA. Chad will promote you. Sanne will relocate you.", "e": "deadpan"},
+      {"s": "tobias", "t": "Take it over to Sanne. Approach slowly. Make eye contact. No sudden requirements.", "e": "neutral", "g": "point"}
+    ],
+
+    "sanne_handover": [
+      {"s": "sanne", "t": "Is that… a handover?", "e": "deadpan"},
+      {"if": "spec_tobias", "s": "sanne", "t": "‘Make button green.’", "e": "deadpan"},
+      {"if": "spec_tobias", "s": "sanne", "t": "Which button? Monolith has four thousand buttons. Some of them are load-bearing.", "e": "angry"},
+      {"if": "spec_tobias", "s": "sanne", "t": "You know what? Fine. I’ll make them ALL green. Then it’s definitely done.", "e": "furious", "g": "rage"},
+      {"if": "spec_great", "s": "sanne", "t": "This is… a real spec. With acceptance criteria. And a ‘do not touch’ list.", "e": "shock"},
+      {"if": "spec_great", "s": "sanne", "t": "I might cry. I’m not going to. But I might.", "e": "worried"},
+      {"if": "spec_ok", "s": "sanne", "t": "Good enough. I can work with ‘good enough’. ‘Good enough’ is my love language.", "e": "happy"},
+      {"if": "spec_bad", "s": "sanne", "t": "This is mostly vibes. I’ll fill in the gaps with my imagination. You won’t like my imagination.", "e": "deadpan"},
+      {"if": "spec_has_pop", "s": "sanne", "t": "‘Make it POP.’ Fine. When you click it now, it goes pop. Literally. With a sound.", "e": "smug"},
+      {"if": "spec_has_ai", "s": "sanne", "t": "‘Add AI.’ To a button. Okay. I’ve added a tooltip that says ‘Powered by AI’. It isn’t. Nothing is.", "e": "deadpan"},
+      {"if": "spec_has_synergia", "s": "sanne", "t": "And I’m ignoring SYNERGIA. SYNERGIA doesn’t exist. I checked. It’s a slide.", "e": "deadpan"},
+      {"s": "sanne", "t": "Give me until after lunch. And please don’t ‘just check in’. Checking in is how bugs reproduce.", "e": "neutral"}
+    ],
+
+    "sanne_test_intro": [
+      {"s": "sanne", "t": "Done. It’s in the TEST environment. Want to test it? Nobody ever wants to test it.", "e": "neutral"},
+      {"s": "bogdan", "t": "(from across the office) The test environment is aspirationally similar to production!", "e": "deadpan"},
+      {"s": "sanne", "t": "Click the buttons. Read the warnings. Nobody reads the warnings. Be the person who reads the warnings.", "e": "deadpan", "g": "point"}
+    ],
+
+    "sanne_test_done": [
+      {"if": "flagged_floorlink", "s": "player", "t": "There was a warning — the Approve colour is also used by something called FloorLink. Shouldn’t we check that?", "e": "worried"},
+      {"if": "flagged_floorlink", "s": "sanne", "t": "FloorLink? That’s deprecated. Ask Bogdan — he’ll say the same.", "e": "neutral"},
+      {"if": "flagged_floorlink", "s": "bogdan", "t": "(from across the office) It is deprecated!", "e": "deadpan"},
+      {"if": "flagged_floorlink", "s": "player", "t": "Deprecated as in… turned off?", "e": "worried"},
+      {"if": "flagged_floorlink", "s": "bogdan", "t": "Deprecated as in: we stopped looking at it. That is different.", "e": "deadpan"},
+      {"if": "flagged_floorlink", "s": "sanne", "t": "It’s probably fine. I’ve logged your concern. In a ticket. Which I will close.", "e": "happy"},
+      {"if": "!flagged_floorlink", "s": "sanne", "t": "Looks good? Great. ‘Ship it’, as the people who never ship anything say.", "e": "happy"},
+      {"if": "variant_bad", "s": "sanne", "t": "And yes, Delete is green now too. You asked for green. You got green. Green is a lifestyle.", "e": "smug"},
+      {"if": "!tested_well", "s": "sanne", "t": "You didn’t test everything. That’s fine. Gerald won’t either. That’s called ‘user acceptance testing’.", "e": "deadpan"},
+      {"s": "sanne", "t": "Now we wait for the client to accept it. Gerald will test it by looking at it from across a room.", "e": "neutral"}
+    ],
+
+    "bogdan_deploy": [
+      {"s": "bogdan", "t": "You want to deploy. To production. On a Monday afternoon.", "e": "deadpan"},
+      {"s": "bogdan", "t": "Brave. Very brave. I respect it. I have also updated my CV.", "e": "smug"},
+      {"if": "flagged_floorlink", "s": "bogdan", "t": "I saw your FloorLink note. Thank you. Nobody writes notes. I have added it to the risk register, under ‘Probably Fine’.", "e": "happy"},
+      {"choice": [
+        {"t": "Let’s do it!", "id": "go", "then": [
+          {"s": "bogdan", "t": "Good. Lift the safety cover. Press the button. It is big and red because management asked for a ‘visible commitment to delivery’.", "e": "deadpan"}
+        ]},
+        {"t": "Should we wait until… never?", "id": "wait", "then": [
+          {"s": "bogdan", "t": "There is no ‘never’ in consulting. There is only ‘Friday at 17:55’.", "e": "deadpan"},
+          {"s": "bogdan", "t": "Today is better. Today I am in a good mood. You can tell because I am not sighing.", "e": "deadpan"}
+        ]}
+      ]}
+    ],
+
+    "cake_celebration": [
+      {"s": "maggie", "t": "There they are! First release on your first day! That’s never happened. Usually it takes two years and a reorganisation.", "e": "joy", "g": "cheer"},
+      {"s": "maggie", "t": "Lemon drizzle. Cut it yourself, love — it’s a ‘learning opportunity’, as Chad would say.", "e": "happy"},
+      {"s": "player", "t": "This is honestly the best day I’ve ever had at work.", "e": "joy"},
+      {"s": "maggie", "t": "Oh, don’t say that out loud, dear. The office can hear you.", "e": "worried"},
+      {"event": "disaster_1"},
+      {"s": "narrator", "t": "Your phone buzzes. Once. Politely."},
+      {"event": "disaster_2"},
+      {"s": "narrator", "t": "Then less politely."},
+      {"event": "disaster_3"},
+      {"s": "narrator", "t": "Your phone is now glowing, vibrating, and emitting what appear to be small cartoon embers.", "shake": 0.3},
+      {"s": "maggie", "t": "…I’ll get the emergency cake.", "e": "worried"},
+      {"s": "narrator", "t": "Incoming video call: GERALD PETTIGREW. The ‘decline’ button has been disabled by Northbound’s client-first policy."}
+    ],
+
+    "gerald_call": [
+      {"s": "gerald", "t": "WHAT. HAVE. YOU. DONE.", "e": "furious", "shake": 0.4},
+      {"s": "player", "t": "Hello, Gerald! We made the Approve button green, exactly as—", "e": "worried"},
+      {"s": "gerald", "t": "GREEN! Yes! And do you know what ELSE reads the button colours? FLOORLINK!", "e": "furious"},
+      {"event": "call_shake:1.6", "s": "gerald", "t": "Some genius in 2011 wired the factory to the ERP colour scheme! GREEN means GO! Every conveyor belt in the building is on FULL SPEED!", "e": "furious"},
+      {"s": "gerald", "t": "The ovens are on maximum! The packing robots are packing the other packing robots! We are making FOUR HUNDRED BISCUITS PER SECOND!", "e": "furious"},
+      {"if": "variant_bad", "s": "gerald", "t": "AND the Delete button is green as well! My staff have deleted three hundred shipments! CONFIDENTLY!", "e": "furious"},
+      {"if": "spec_has_floorlink", "s": "player", "t": "But our specification said very clearly not to touch FloorLink!", "e": "worried"},
+      {"if": "spec_has_floorlink", "s": "gerald", "t": "You didn’t touch FloorLink! FloorLink touched YOU!", "e": "furious"},
+      {"if": "flagged_floorlink", "s": "player", "t": "(I flagged this. I literally flagged this. There was a little flag.)", "e": "deadpan"},
+      {"s": "gerald", "t": "Our emergency procedure for overproduction is to ship ALL surplus to the nearest business partner!", "e": "furious"},
+      {"s": "player", "t": "…Who is your nearest business partner?", "e": "worried"},
+      {"s": "gerald", "t": "Look out of your window.", "e": "smug"},
+      {"event": "biscuits"},
+      {"s": "narrator", "t": "Approximately 2.4 tonnes of assorted biscuits have entered the building."},
+      {"s": "gerald", "t": "I want EVERYONE on this call. NOW. I want to know WHO. IS. RESPONSIBLE.", "e": "furious"},
+      {"s": "chad", "t": "(from his office) WAR ROOM! EVERYBODY! NOW! And somebody bring me a biscuit, I skipped lunch!", "e": "furious"}
+    ],
+
+    "war_room": [
+      {"s": "chad", "t": "Team. Before anybody panics, I want to remind everyone that our project dashboard is green.", "e": "smug", "g": "present"},
+      {"s": "bogdan", "t": "Everything is green. That is the problem.", "e": "deadpan"},
+      {"s": "gerald", "t": "(on speakerphone) WHO. IS. RESPONSIBLE.", "e": "furious"},
+      {"if": "spec_great", "s": "tobias", "t": "The specification was perfect! The junior wrote it! It had a ‘do not touch’ list!", "e": "worried"},
+      {"if": "!spec_great", "s": "tobias", "t": "Well, the specification was… a specification. Of sorts. Written under time pressure. By someone.", "e": "worried"},
+      {"s": "sanne", "t": "I implemented exactly what was written.", "e": "angry"},
+      {"s": "tobias", "t": "Did you just say ‘exactly what was written’ sarcastically?", "e": "angry"},
+      {"s": "sanne", "t": "Did you just say ‘specification’ sarcastically?", "e": "furious"},
+      {"s": "bogdan", "t": "It is NOT the network.", "e": "angry"},
+      {"s": "chad", "t": "Nobody said it was the network, Bogdan.", "e": "angry"},
+      {"s": "bogdan", "t": "I am saying it pre-emptively. As a SERVICE.", "e": "furious"},
+      {"s": "chad", "t": "I’d like to remind everyone that I was in a meeting at the time, and am therefore strategically blameless.", "e": "smug"},
+      {"s": "tobias", "t": "You were in a meeting about MEETINGS!", "e": "furious"},
+      {"s": "sanne", "t": "And you scheduled FIVE follow-ups!", "e": "furious"},
+      {"s": "chad", "t": "Okay! Let’s take this OFFLINE!", "e": "furious", "g": "rage"},
+      {"event": "war_brawl"},
+      {"s": "narrator", "t": "The Director of Strategic Transformation and three senior professionals have disappeared into a cloud of dust, elbows and corporate vocabulary."},
+      {"s": "narrator", "t": "Somewhere inside it, someone is shouting ‘KEY PERFORMANCE INDICATORS’ as a battle cry."},
+      {"choice": [
+        {"t": "Shout “STOP!”", "id": "stop", "then": [
+          {"event": "brawl_grow"},
+          {"s": "narrator", "t": "Nobody hears you. The cloud has grown. It has acquired a stapler."}
+        ]},
+        {"t": "Calmly go and fetch Maggie.", "id": "fetch", "stat": {"team": 1}, "then": [
+          {"s": "narrator", "t": "You turn around to fetch Maggie. She is already there. She has always been already there."}
+        ]},
+        {"t": "Take notes for the minutes.", "id": "minutes", "stat": {"chad": 1}, "then": [
+          {"s": "player", "t": "Action item one: … everyone. Owner: … everyone. Deadline: … ASAP.", "e": "worried"},
+          {"event": "brawl_grow"}
+        ]}
+      ]},
+      {"event": "maggie_arrives"},
+      {"s": "maggie", "t": "Who wants cake?", "e": "joy", "g": "present"},
+      {"event": "brawl_stop"},
+      {"event": "me_chorus"},
+      {"s": "narrator", "t": "Four grown professionals are suddenly standing in a neat row, slightly dishevelled, holding out their hands for cake."},
+      {"s": "maggie", "t": "Lovely. Plates, please. And use your words, not your elbows.", "e": "happy"},
+      {"s": "chad", "t": "Has anybody seen my tie?", "e": "worried"},
+      {"s": "bogdan", "t": "No.", "e": "smug"}
+    ],
+
+    "twist": [
+      {"event": "war_twist"},
+      {"s": "narrator", "t": "Your phone buzzes again. This time the buzz sounds almost… cheerful."},
+      {"s": "player", "t": "It’s Dagmar. She says a supermarket chain wants four million biscuits by Friday. And Crumbworth already has them.", "e": "shock"},
+      {"s": "player", "t": "Their production record has been broken by three hundred and forty percent.", "e": "shock"},
+      {"s": "player", "t": "And Gerald is… taking the credit.", "e": "deadpan"},
+      {"s": "gerald", "t": "(on speakerphone) Ahem. Ladies. Gentlemen. Consultants. The Board is DELIGHTED with our new AI-powered production optimisation.", "e": "joy"},
+      {"s": "gerald", "t": "Please do it again. Also, please send an invoice. Also, we have sent you some biscuits.", "e": "happy"},
+      {"s": "narrator", "t": "Everyone looks at the 2.4 tonnes of biscuits."},
+      {"s": "chad", "t": "Team. THIS is exactly what Project SYNERGIA is about.", "e": "joy", "g": "present"},
+      {"s": "tobias", "t": "It was a colour change.", "e": "deadpan"},
+      {"s": "chad", "t": "An AI-powered colour change.", "e": "smug"},
+      {"s": "sanne", "t": "Here we go.", "e": "deadpan", "g": "facepalm"},
+      {"s": "chad", "t": "Tobias, raise a change request. ‘Biscuit Throughput Optimisation’. Thirty-one thousand Bix. Bogdan — put SYNERGIA on the invoice.", "e": "joy"},
+      {"s": "bogdan", "t": "Where does it run?", "e": "deadpan"},
+      {"s": "chad", "t": "…On the invoice, Bogdan.", "e": "smug"},
+      {"s": "maggie", "t": "Well done, everyone. Especially you, {player}. You did everything right and it still went sideways. That’s how you know you’re a real consultant now.", "e": "happy"}
+    ],
+
+    "final_email": [
+      {"s": "maggie", "t": "Off you go home now, love. Have a bath. Don’t check your email.", "e": "happy", "g": "wave"},
+      {"event": "final_buzz"},
+      {"s": "narrator", "t": "New email from Gerald Pettigrew. Subject: URGENT: Re: the button."},
+      {"s": "gerald", "t": "(by email) ‘Can we also make the DELETE button green? My staff are now scared of how fast everything goes.’", "e": "worried"},
+      {"event": "sad_trombone"},
+      {"s": "tobias", "t": "…See you tomorrow, then.", "e": "deadpan", "g": "slump"},
+      {"s": "sanne", "t": "I’m putting my headphones on. Forever.", "e": "deadpan"},
+      {"s": "bogdan", "t": "It is still not the network.", "e": "deadpan"}
+    ],
+
+    "chat_maggie": [
+      {"s": "maggie", "t": "Need anything, love? Water? Cake? A hug? A strongly worded email to someone? I do all four.", "e": "happy"}
+    ],
+    "chat_maggie_meet": [
+      {"s": "maggie", "t": "Off you pop! Tobias, Sanne and Bogdan. Collect all three — like stickers, but with more sighing.", "e": "happy", "g": "point"}
+    ],
+    "chat_tobias": [
+      {"s": "tobias", "t": "(into his headset) …no, Henrik, ‘ASAP’ is not a date. … Sorry — what’s up? Actually, don’t tell me. I have no free brain left.", "e": "worried"}
+    ],
+    "chat_tobias_meeting": [
+      {"s": "tobias", "t": "Ready for the ten o’clock? Bring a snack. And a will.", "e": "deadpan"}
+    ],
+    "chat_tobias_email": [
+      {"s": "tobias", "t": "Gerald’s email is on your laptop. Brace yourself. It’s three lines long and somehow every one of them is shouting.", "e": "worried"}
+    ],
+    "chat_sanne": [
+      {"s": "sanne", "t": "(lifts one headphone) Is it urgent? …No? Then it can be an email. Better: a ticket. Best: nothing.", "e": "deadpan"}
+    ],
+    "chat_sanne_spec": [
+      {"s": "sanne", "t": "No spec, no code. That’s not a rule. That’s a religion. Talk to Tobias first.", "e": "deadpan"}
+    ],
+    "chat_sanne_deploy": [
+      {"s": "sanne", "t": "It’s with Bogdan now. Releasing things is his job. Being blamed for them is mine.", "e": "deadpan"}
+    ],
+    "chat_bogdan": [
+      {"s": "bogdan", "t": "Yes?", "e": "deadpan"},
+      {"s": "bogdan", "t": "Before you ask: it is not the network.", "e": "deadpan"}
+    ],
+    "chat_bogdan_test": [
+      {"s": "bogdan", "t": "The test environment is up. It is a test environment. Please do not judge it by the standards of reality.", "e": "deadpan"}
+    ],
+    "chat_chad": [
+      {"s": "chad", "t": "{player}! My door is always open. Metaphorically. Physically, please book a slot. With me. I don’t have an assistant.", "e": "smug", "g": "present"},
+      {"s": "chad", "t": "Quick question: how would you rate your synergy, on a scale from ‘aligned’ to ‘hyper-aligned’?", "e": "joy"},
+      {"choice": [
+        {"t": "Hyper-aligned, obviously.", "id": "hyper", "stat": {"chad": 1}, "then": [
+          {"s": "chad", "t": "YES. I knew it. You’re going places. Mostly meetings. But places.", "e": "joy", "g": "cheer"}
+        ]},
+        {"t": "What does that mean?", "id": "meaning", "then": [
+          {"s": "chad", "t": "It means… whatever we need it to mean. That’s the beauty of it.", "e": "smug"}
+        ]}
+      ]}
+    ],
+    "chat_chad_meet": [
+      {"s": "chad", "t": "Ah, the junior! See you at ten. Big things. Logo things.", "e": "smug", "g": "point"}
+    ],
+    "chat_kevin": [
+      {"s": "kevin", "t": "I’ve been looking for a rounding error for three days. I think it’s me. I think I’m the rounding error.", "e": "worried"},
+      {"s": "kevin", "t": "Also, something today is going to cost thirty-one thousand Bix. I don’t know what yet. I just have a feeling.", "e": "deadpan"}
+    ],
+    "chat_pia": [
+      {"s": "pia", "t": "Hiiii! Pia, Sales! I just sold a client the solution to a problem they don’t have yet! It’s called visionary selling!", "e": "joy", "g": "wave"},
+      {"s": "pia", "t": "Delivery will figure it out. Delivery always figures it out. Who’s Delivery? Oh — you’re Delivery! Welcome!", "e": "joy"}
+    ],
+    "chat_olu": [
+      {"s": "olu", "t": "Hi! Olu, project manager. Have you seen my Gantt chart? It was right here. It was very tall. It had dependencies.", "e": "worried"},
+      {"s": "olu", "t": "If you see a timeline, please don’t touch it. It’s very fragile. Like me.", "e": "worried"}
+    ],
+
+    "flavor_coffee": [
+      {"s": "narrator", "t": "The coffee machine’s display reads: ‘Hello! I am now on the Wi-Fi. Please accept my 46-page privacy policy to receive coffee.’"},
+      {"choice": [
+        {"t": "Accept", "id": "coffee_accept", "then": [
+          {"sfx": "gulp", "s": "narrator", "t": "You receive a flat white and a newsletter subscription. Somewhere, Bogdan’s monitor flashes red."}
+        ]},
+        {"t": "Decline", "id": "coffee_decline", "then": [
+          {"s": "narrator", "t": "The machine dispenses hot water and a single, dignified tear."}
+        ]}
+      ]}
+    ],
+    "flavor_fridge": [
+      {"s": "narrator", "t": "A note on the fridge: ‘Whoever took my yoghurt: I know what you did. I have access to the CCTV, the badge logs and your browser history. — B.’"},
+      {"s": "narrator", "t": "Inside: three cakes labelled by dietary requirement, and one yoghurt, labelled ‘BAIT’."}
+    ],
+    "flavor_cake_table": [
+      {"s": "narrator", "t": "Lemon drizzle cake. A little flag on top says ‘Congratulations!’ on one side and ‘Sorry for your loss’ on the other. Multi-purpose."}
+    ],
+    "flavor_chalkboard": [
+      {"s": "narrator", "t": "‘Cake is a leading indicator.’ Underneath, in different handwriting: ‘Of what?’ Underneath that, in Maggie’s handwriting: ‘Of cake.’"}
+    ],
+    "flavor_printer": [
+      {"s": "narrator", "t": "The printer display reads: ‘PAPER JAM IN TRAY 2.’ You check. There is no Tray 2."},
+      {"s": "narrator", "t": "It also says: ‘Toner low. Morale also low.’"}
+    ],
+    "flavor_whiteboard": [
+      {"s": "narrator", "t": "PEOPLE. PROJECTS. PROGRESS. PROFIT. And, in smaller letters: and a bit of chaos."},
+      {"s": "narrator", "t": "Someone has drawn a little smiley face. Someone else has given it a tie and a performance target."}
+    ],
+    "flavor_duck": [
+      {"s": "narrator", "t": "Your desk came with a rubber duck. A label on its base reads: ‘Senior Solution Architect. Do not ask it for estimates.’"},
+      {"choice": [
+        {"t": "Explain your problem to the duck.", "id": "duck_talk", "then": [
+          {"s": "player", "t": "So… the client wants a button to be… right.", "e": "worried"},
+          {"s": "narrator", "t": "The duck says nothing. The duck has been in consulting for nine years. The duck knows."}
+        ]},
+        {"t": "Leave the duck in peace.", "id": "duck_leave", "then": [
+          {"s": "narrator", "t": "The duck appreciates your boundaries."}
+        ]}
+      ]}
+    ],
+    "flavor_laptop": [
+      {"s": "narrator", "t": "Your laptop. The wallpaper is the company values slide: Integrity, Excellence, Agility, Synergy and — added recently, in a different font — AI."}
+    ],
+    "flavor_laptop_arrival": [
+      {"s": "narrator", "t": "Your laptop says: ‘Your account is pending approval by Bogdan.’ It sounds like it has been saying this for a while."}
+    ],
+    "flavor_laptop_meet": [
+      {"s": "narrator", "t": "Your laptop says: ‘Your account is pending approval by Bogdan.’ It sounds like it has been saying this for a while."}
+    ],
+    "flavor_pia_bell": [
+      {"s": "narrator", "t": "Pia’s deal bell. A sign says: ‘Ring ONLY when you close a deal.’"},
+      {"choice": [
+        {"t": "Ring it anyway.", "id": "ring", "then": [
+          {"sfx": "bell", "s": "pia", "t": "WHO CLOSED A DEAL?!", "e": "joy", "g": "cheer"},
+          {"s": "player", "t": "…Me? I closed a… door. Earlier.", "e": "worried"},
+          {"s": "pia", "t": "I’ll allow it! Doors are the gateway to pipeline!", "e": "joy"}
+        ]},
+        {"t": "Respect the bell.", "id": "no_ring", "then": [
+          {"s": "narrator", "t": "Wise. The bell remembers."}
+        ]}
+      ]}
+    ],
+    "flavor_parental": [
+      {"s": "narrator", "t": "This desk belongs to someone who has been on parental leave since 2023. Their plant has taken over and now attends stand-ups."}
+    ],
+    "flavor_bell": [
+      {"sfx": "bell", "s": "narrator", "t": "Ding! Somewhere in the building, Maggie involuntarily preheats an oven."}
+    ],
+    "flavor_sofa": [
+      {"s": "narrator", "t": "The visitor sofa. Extremely comfortable. Legend says a client sat here in 2022 waiting for ‘a quick five-minute catch-up’, and was eventually hired."}
+    ],
+    "flavor_magazines": [
+      {"s": "narrator", "t": "ERP MONTHLY. Cover story: ‘Is Your Data Lake Too Wet?’ Also inside: ‘Ten Buzzwords That Will Change Your Life (Number Seven: Hyper-Alignment)’."}
+    ],
+    "flavor_meeting_table": [
+      {"s": "narrator", "t": "The meeting room. On the table: a speakerphone shaped like a startled starfish, and four printed agendas that nobody will read."}
+    ],
+    "flavor_war_status": [
+      {"s": "narrator", "t": "PROJECT CRUMB — STATUS: GREEN. The footnote says: ‘Status self-reported by the project sponsor.’"}
+    ],
+    "flavor_war_budget": [
+      {"s": "narrator", "t": "Budget versus actual. The actual bars climb majestically past the budget line, as if they are trying to escape it."},
+      {"s": "narrator", "t": "A sticky note in Chad’s handwriting: ‘Variance = investment in learning!’"}
+    ],
+    "flavor_war_margin": [
+      {"s": "narrator", "t": "The profit margin goes down, down, down. Next to it, somebody has drawn a big green arrow pointing up and written ‘MOMENTUM!’"}
+    ],
+    "flavor_war_risk": [
+      {"s": "narrator", "t": "The risk register. Risk 1: Gerald. Risk 2: Gerald (again). Risk 3: FloorLink — deprecated, probably fine. Risk 5: cake shortage — HIGH."}
+    ],
+    "flavor_trophy": [
+      {"s": "narrator", "t": "A golden trophy: THOUGHT LEADER OF THE YEAR. Nominated by: Chad. Voted for by: Chad. Presented by: Chad."}
+    ],
+    "flavor_poster": [
+      {"s": "narrator", "t": "An inspirational poster of a sunrise. ‘SYNERGY: Because none of us is as confident as me.’"}
+    ],
+    "flavor_yacht": [
+      {"s": "narrator", "t": "A framed photo of a yacht named ‘Billable Hours’. Maggie baked a cake when Chad bought it. It was boat-shaped. It sank."}
+    ],
+    "flavor_golf": [
+      {"s": "narrator", "t": "An indoor putting green. A small sign: ‘Executive Thinking Area’. The ball has not moved since 2024."}
+    ],
+    "flavor_servers": [
+      {"s": "narrator", "t": "The servers hum contentedly. A sign taped to the rack says, in Bogdan’s handwriting: IT’S NOT THE NETWORK."},
+      {"s": "narrator", "t": "Underneath, in much smaller handwriting: ‘(it is sometimes the network)’. This part has been firmly crossed out."}
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "player": {
+    "name": "Alex",
+    "role": "Junior Consultant (Day 1)",
+    "tag": "#2b5fae",
+    "blip": 1.0,
+    "look": {
+      "skin": "#f0c09a", "hair": "#8a4a24", "hair_style": "tousled", "eyes": "#5a3a22",
+      "shirt": "#fbfaf6", "pants": "#3d4e6b", "shoes": "#4a3326",
+      "accessories": ["lanyard"], "face": "happy", "height": 1.0, "width": 1.0
+    }
+  },
+  "maggie": {
+    "name": "Maggie Fairweather",
+    "role": "Head of People & Happiness",
+    "tag": "#e0862f",
+    "blip": 1.25,
+    "look": {
+      "skin": "#f3cfb3", "hair": "#c4683a", "hair_style": "bob", "eyes": "#3d6b4a",
+      "shirt": "#fbfaf6", "jacket": "#f2b134", "pants": "#4e6a8f", "shoes": "#8a3a2a",
+      "accessories": ["glasses", "pearls", "earrings"], "glasses_color": "#c0392b",
+      "face": "happy", "height": 0.93, "width": 1.1
+    }
+  },
+  "tobias": {
+    "name": "Tobias Grant",
+    "role": "Senior Functional Consultant",
+    "tag": "#2b8a7e",
+    "blip": 0.95,
+    "look": {
+      "skin": "#e8b58f", "hair": "#3b2a20", "hair_style": "short", "beard": "stubble", "eyes": "#3a2a1a",
+      "shirt": "#a9cbe8", "pants": "#2e3138", "shoes": "#2b2220",
+      "accessories": ["headset", "pen"], "face": "worried", "height": 1.03, "width": 1.0
+    }
+  },
+  "sanne": {
+    "name": "Sanne de Vries",
+    "role": "Developer",
+    "tag": "#7a4fd1",
+    "blip": 1.15,
+    "look": {
+      "skin": "#f6d5bd", "hair": "#2a2a33", "hair_style": "ponytail", "eyes": "#3b5b8a",
+      "shirt": "#2bb3a3", "jacket": "#3d4560", "pants": "#2e3138", "shoes": "#fbfaf6",
+      "accessories": ["headphones", "glasses"], "headphones": "#f28c28", "glasses_color": "#2b2b2b",
+      "face": "neutral", "height": 0.95, "width": 0.95
+    }
+  },
+  "bogdan": {
+    "name": "Bogdan Kowalski",
+    "role": "Infrastructure Specialist",
+    "tag": "#3a7d44",
+    "blip": 0.75,
+    "look": {
+      "skin": "#eac3a0", "hair": "#6b4a32", "hair_style": "buzz", "beard": "full", "eyes": "#4a4a3a",
+      "shirt": "#2e3138", "pants": "#3d4e6b", "shoes": "#1d1f24",
+      "accessories": [], "face": "deadpan", "height": 1.07, "width": 1.15
+    }
+  },
+  "chad": {
+    "name": "Chad Pemberton-Vance",
+    "role": "Director of Strategic Transformation",
+    "tag": "#c0392b",
+    "blip": 1.05,
+    "look": {
+      "skin": "#f1c7a5", "hair": "#d9b25a", "hair_style": "slick", "eyes": "#3b6fb0",
+      "shirt": "#ffffff", "jacket": "#1f2d4a", "pants": "#1f2d4a", "shoes": "#6b3a1f",
+      "accessories": ["tie", "pocket_square"], "tie": "#f2b134",
+      "face": "smug", "height": 1.06, "width": 1.05
+    }
+  },
+  "kevin": {
+    "name": "Kevin Okoro",
+    "role": "Finance Controller",
+    "tag": "#4e6a8f",
+    "blip": 0.9,
+    "look": {
+      "skin": "#8d5a3b", "hair": "#1b1414", "hair_style": "curly", "eyes": "#2a1a10",
+      "shirt": "#d7e3c8", "jacket": "#8a6f4e", "pants": "#3d4e6b", "shoes": "#2b2220",
+      "accessories": ["glasses"], "face": "neutral", "height": 1.0, "width": 1.0
+    }
+  },
+  "pia": {
+    "name": "Pia Lindqvist",
+    "role": "Sales Consultant",
+    "tag": "#d1477a",
+    "blip": 1.3,
+    "look": {
+      "skin": "#f5d2b8", "hair": "#e8c46a", "hair_style": "long", "eyes": "#3d6b9a",
+      "shirt": "#fbfaf6", "jacket": "#e85d5d", "pants": "#2b3a55", "shoes": "#e85d5d",
+      "accessories": ["earrings"], "face": "joy", "height": 0.97, "width": 0.95
+    }
+  },
+  "olu": {
+    "name": "Olu Adeyemi",
+    "role": "Project Manager",
+    "tag": "#b07a1f",
+    "blip": 1.0,
+    "look": {
+      "skin": "#5c3a26", "hair": "#151010", "hair_style": "buzz", "eyes": "#2a1a10",
+      "shirt": "#f2b134", "pants": "#c9b38a", "shoes": "#4a3326",
+      "accessories": ["glasses", "lanyard"], "face": "worried", "height": 1.04, "width": 1.0
+    }
+  },
+  "gerald": {
+    "name": "Gerald Pettigrew",
+    "role": "Head of Operations, Crumbworth Biscuits Ltd",
+    "tag": "#8a5a36",
+    "blip": 0.85,
+    "look": {
+      "skin": "#f2c2a2", "hair": "#a3a3a3", "hair_style": "bald_sides", "beard": "moustache", "eyes": "#4a4a3a",
+      "shirt": "#f6eedf", "jacket": "#7a6448", "pants": "#4a3a2a", "shoes": "#3b2a20",
+      "accessories": ["tie"], "tie": "#8a2e2e", "face": "angry", "height": 1.0, "width": 1.15
+    }
+  },
+  "dagmar": {
+    "name": "Dagmar Holm",
+    "role": "Warehouse Supervisor, Crumbworth Biscuits Ltd",
+    "tag": "#2b8a7e",
+    "blip": 1.0,
+    "look": {
+      "skin": "#f0cdb3", "hair": "#d8d8d8", "hair_style": "bun", "eyes": "#4a6a8a",
+      "shirt": "#f28c28", "pants": "#3d4e6b", "shoes": "#2b2220",
+      "accessories": ["glasses"], "face": "deadpan", "height": 0.96, "width": 1.0
+    }
+  },
+  "narrator": {
+    "name": "",
+    "role": "",
+    "tag": "#6b7890",
+    "blip": 1.0,
+    "look": {}
+  }
+}
