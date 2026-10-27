@@ -152,6 +152,10 @@ func walk_many(targets: Dictionary) -> void:
 			await c.arrived
 
 
+func shake_camera(amount: float) -> void:
+	rig.shake(amount)
+
+
 func face_each_other(a: String, b: String) -> void:
 	var ca := npc(a)
 	var cb := npc(b)

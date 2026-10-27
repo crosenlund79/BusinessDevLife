@@ -12,9 +12,12 @@ extends Control
 signal _advance
 signal _picked(index: int)
 
-var world: World
+## Either the 3D World or the paper Diorama: anything with npc(id), chars
+## and shake_camera(amount).
+var world: Node
 var director: Node
-var studio: PortraitStudio
+## Portrait provider: a 3D PortraitStudio, or a 2D PaperPortrait.
+var studio
 var defs: Dictionary = {}
 var active := false
 
@@ -37,9 +40,10 @@ var _speaker := ""
 var _waiting_choice := false
 var _t := 0.0
 var _hide_tween: Tween
+var _tapes: Control
 
 
-func build(character_defs: Dictionary) -> void:
+func build(character_defs: Dictionary, portrait_provider: Control = null) -> void:
 	defs = character_defs
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -50,10 +54,14 @@ func build(character_defs: Dictionary) -> void:
 	_catcher.visible = false
 	add_child(_catcher)
 
-	studio = PortraitStudio.new()
-	studio.font = UIKit.font(800)
-	add_child(studio)
-	studio.setup(320, defs)
+	if portrait_provider == null:
+		var ps := PortraitStudio.new()
+		ps.font = UIKit.font(800)
+		add_child(ps)
+		ps.setup(320, defs)
+		studio = ps
+	else:
+		studio = portrait_provider
 
 	_panel = UIKit.panel(UIKit.PAPER, 22)
 	_panel.anchor_left = 0.5
@@ -69,6 +77,7 @@ func build(character_defs: Dictionary) -> void:
 	add_child(_panel)
 	var row := UIKit.hbox(18)
 	_panel.add_child(row)
+
 	var spacer := Control.new()
 	spacer.custom_minimum_size = Vector2(170, 0)
 	row.add_child(spacer)
@@ -120,12 +129,15 @@ func build(character_defs: Dictionary) -> void:
 	_portrait_frame.clip_children = CanvasItem.CLIP_CHILDREN_AND_DRAW
 	_portrait_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_portrait_frame)
-	_portrait = TextureRect.new()
-	_portrait.texture = studio.get_texture()
-	_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_portrait_frame.add_child(_portrait)
+	if studio is PortraitStudio:
+		_portrait = TextureRect.new()
+		_portrait.texture = studio.get_texture()
+		_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_portrait_frame.add_child(_portrait)
+	else:
+		_portrait_frame.add_child(studio)
 
 	_choices = UIKit.vbox(8)
 	_choices.anchor_left = 0.5
@@ -138,10 +150,32 @@ func build(character_defs: Dictionary) -> void:
 	_choices.offset_bottom = -250
 	_choices.alignment = BoxContainer.ALIGNMENT_END
 	add_child(_choices)
+	# two strips of masking tape "holding" the dialogue card to the screen
+	_tapes = Control.new()
+	_tapes.anchor_left = 0.5
+	_tapes.anchor_right = 0.5
+	_tapes.anchor_top = 1.0
+	_tapes.anchor_bottom = 1.0
+	_tapes.offset_left = -560
+	_tapes.offset_right = 600
+	_tapes.offset_top = -236
+	_tapes.offset_bottom = -26
+	_tapes.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_tapes)
+	for side in [-1.0, 1.0]:
+		var tape := ColorRect.new()
+		tape.color = Color(0.98, 0.9, 0.66, 0.8)
+		tape.size = Vector2(96, 26)
+		tape.position = Vector2(580 + side * 500 - 48, -13)
+		tape.rotation = side * 0.08
+		tape.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_tapes.add_child(tape)
 	_set_visible(false)
 
 
 func _set_visible(on: bool) -> void:
+	if _tapes:
+		_tapes.visible = on
 	_panel.visible = on
 	_portrait_frame.visible = on and studio.current != ""
 	_catcher.visible = on
@@ -257,7 +291,7 @@ func _say(line: Dictionary, keep_open := false) -> void:
 	tag_sb.content_margin_bottom = 6
 	_name_tag.add_theme_stylebox_override("panel", tag_sb)
 	# portrait
-	var pc := studio.show_char(speaker)
+	var pc = studio.show_char(speaker)
 	_portrait_frame.visible = pc != null
 	# text
 	var text := str(line.get("t", ""))
@@ -270,7 +304,7 @@ func _say(line: Dictionary, keep_open := false) -> void:
 	_typing = true
 	_arrow.visible = false
 	# 3D actor reactions
-	var actor: Character = world.npc(speaker) if world else null
+	var actor = world.npc(speaker) if world else null
 	var expr := str(line.get("e", ""))
 	for c in [actor, pc]:
 		if c == null:
@@ -283,7 +317,7 @@ func _say(line: Dictionary, keep_open := false) -> void:
 	if actor and line.has("emote"):
 		actor.emote(str(line["emote"]))
 	if line.has("shake") and world:
-		world.rig.shake(float(line["shake"]))
+		world.shake_camera(float(line["shake"]))
 	if _fast:
 		_complete_line()
 	while _typing:
@@ -339,8 +373,7 @@ func _end() -> void:
 	_hide_tween.tween_callback(_hide_if_inactive)
 	if world:
 		for id in world.chars:
-			var c: Character = world.chars[id]
-			c.set_talking(false)
+			world.chars[id].set_talking(false)
 
 
 func _kill_hide() -> void:

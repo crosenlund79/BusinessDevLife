@@ -7,7 +7,8 @@ extends CanvasLayer
 signal start_pressed
 signal restart_requested
 
-var world: World
+var world: Node   # World (3D prototype) or Diorama (paper prototype)
+var paper := false
 var defs: Dictionary = {}
 var dialogue: DialogueBox
 var desktop: Desktop
@@ -38,11 +39,13 @@ var _call_name: Label
 var _notifications: Array = []
 var _phone_panel: PanelContainer
 var _phone_list: VBoxContainer
+var _hint: Label
 
 
-func build(w: World, character_defs: Dictionary) -> void:
+func build(w: Node, character_defs: Dictionary, paper_mode := false) -> void:
 	world = w
 	defs = character_defs
+	paper = paper_mode
 	layer = 10
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	var root := Control.new()
@@ -57,14 +60,19 @@ func build(w: World, character_defs: Dictionary) -> void:
 	dialogue = DialogueBox.new()
 	root.add_child(dialogue)
 	dialogue.world = world
-	dialogue.build(defs)
+	if paper:
+		var pp := PaperPortrait.new()
+		dialogue.build(defs, pp)
+	else:
+		dialogue.build(defs)
 	desktop = Desktop.new()
 	root.add_child(desktop)
 	desktop.build()
 	work = WorkPanels.new()
 	root.add_child(work)
 	work.build()
-	_build_call(root)
+	if not paper:
+		_build_call(root)   # the 3D video-call studio is only needed by the 3D prototype
 	_build_caption(root)
 	_build_title(root)
 	_build_settings(root)
@@ -117,6 +125,7 @@ func _build_hud(root: Control) -> void:
 	tv.add_child(_rep_label)
 	# menu hint (bottom-left)
 	var hint := UIKit.label(Loc.t("ui.controls_hint"), 14, Color(1, 1, 1, 0.9), 700)
+	_hint = hint
 	hint.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.6))
 	hint.add_theme_constant_override("shadow_offset_y", 2)
 	hint.anchor_top = 1.0
@@ -224,6 +233,10 @@ func _build_hud(root: Control) -> void:
 	_phone_list = UIKit.vbox(6)
 	_phone_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(_phone_list)
+
+
+func set_controls_hint(text: String) -> void:
+	_hint.text = text
 
 
 func set_hud_visible(on: bool) -> void:
@@ -392,6 +405,7 @@ func _build_call(root: Control) -> void:
 	_call_studio.font = UIKit.font(800)
 	_call.add_child(_call_studio)
 	_call_studio.setup(560, defs, true, Color("d9c7a8"))
+	_call_studio.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	var frame := PanelContainer.new()
 	var fsb := StyleBoxFlat.new()
 	fsb.bg_color = Color.BLACK
@@ -415,6 +429,9 @@ func _build_call(root: Control) -> void:
 
 
 func show_call(id: String) -> Character:
+	if _call == null:
+		return null
+	_call_studio.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	_call.visible = true
 	_call_name.text = Loc.t("call.with", {"name": str(defs.get(id, {}).get("name", id))})
 	var c := _call_studio.show_char(id)
@@ -425,17 +442,25 @@ func show_call(id: String) -> Character:
 
 
 func call_char(id: String) -> Character:
-	return _call_studio.get_char(id)
+	return _call_studio.get_char(id) if _call_studio else null
 
 
 func call_shake(amount: float) -> void:
-	_call_studio.shake = amount
+	if _call_studio:
+		_call_studio.shake = amount
 
 
 func hide_call() -> void:
+	if _call == null:
+		return
 	var tw := create_tween()
 	tw.tween_property(_call, "modulate", Color(1, 1, 1, 0), 0.3)
-	tw.tween_callback(func(): _call.visible = false)
+	tw.tween_callback(_on_call_hidden)
+
+
+func _on_call_hidden() -> void:
+	_call.visible = false
+	_call_studio.render_target_update_mode = SubViewport.UPDATE_DISABLED
 
 
 # ================================================================== captions & fades

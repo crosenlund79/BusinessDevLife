@@ -4,7 +4,7 @@ extends RefCounted
 ## Furniture registers its footprint while the office is being built, which
 ## keeps navigation deterministic and free of runtime baking.
 
-const CELL := 0.5
+var cell := 0.5
 
 var origin := Vector2(-15.0, -10.0)
 var cols := 60
@@ -13,6 +13,20 @@ var astar := AStarGrid2D.new()
 
 
 func _init() -> void:
+	_setup()
+
+
+## Re-dimensions the grid (the diorama room is smaller and finer than the 3D office).
+func configure(new_origin: Vector2, new_cols: int, new_rows: int, new_cell: float) -> void:
+	origin = new_origin
+	cols = new_cols
+	rows = new_rows
+	cell = new_cell
+	astar = AStarGrid2D.new()
+	_setup()
+
+
+func _setup() -> void:
 	astar.region = Rect2i(0, 0, cols, rows)
 	astar.cell_size = Vector2(1, 1)
 	astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
@@ -21,11 +35,11 @@ func _init() -> void:
 
 
 func to_cell(p: Vector3) -> Vector2i:
-	return Vector2i(int(floor((p.x - origin.x) / CELL)), int(floor((p.z - origin.y) / CELL)))
+	return Vector2i(int(floor((p.x - origin.x) / cell)), int(floor((p.z - origin.y) / cell)))
 
 
 func to_world(c: Vector2i) -> Vector3:
-	return Vector3(origin.x + (c.x + 0.5) * CELL, 0.0, origin.y + (c.y + 0.5) * CELL)
+	return Vector3(origin.x + (c.x + 0.5) * cell, 0.0, origin.y + (c.y + 0.5) * cell)
 
 
 func in_bounds(c: Vector2i) -> bool:
@@ -108,7 +122,7 @@ func _smooth(from: Vector3, pts: Array) -> Array:
 
 func _line_clear(a: Vector3, b: Vector3) -> bool:
 	var dist := Vector2(b.x - a.x, b.z - a.z).length()
-	var steps := int(dist / (CELL * 0.35)) + 1
+	var steps := int(dist / (cell * 0.35)) + 1
 	for s in steps + 1:
 		var p: Vector3 = a.lerp(b, float(s) / steps)
 		# check a little either side so characters don't clip corners

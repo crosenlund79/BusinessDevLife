@@ -7,3 +7,7 @@ export_presets.cfg
 .DS_Store
 Thumbs.db
 __pycache__/
+
+# art pipeline intermediates
+tools/art/out/
+tools/art/__pycache__/

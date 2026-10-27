@@ -22,27 +22,55 @@ const DISPLAY_FAMILIES := ["Fredoka One", "Fredoka", "Baloo 2", "Lilita One", "L
 static var _fonts: Dictionary = {}
 
 
+## Bundled, OFL-licensed typefaces (fonts/): Nunito Sans for UI text and
+## Fredoka for display titles. Falls back to system fonts if missing.
+const FONT_FILES := {600: "res://fonts/NunitoSans-600.woff2", 700: "res://fonts/NunitoSans-700.woff2",
+	800: "res://fonts/NunitoSans-800.woff2", 900: "res://fonts/NunitoSans-900.woff2"}
+const DISPLAY_FILE := "res://fonts/Fredoka-700.woff2"
+
+
 static func font(weight := 600) -> Font:
 	var key := "ui%d" % weight
 	if not _fonts.has(key):
-		var f := SystemFont.new()
-		f.font_names = PackedStringArray(FONT_FAMILIES)
-		f.font_weight = weight
-		f.antialiasing = TextServer.FONT_ANTIALIASING_GRAY
-		f.hinting = TextServer.HINTING_LIGHT
-		f.allow_system_fallback = true
-		_fonts[key] = f
+		var best := 600
+		for w in FONT_FILES:
+			if absi(w - weight) < absi(best - weight):
+				best = w
+		var bundled := _load_font(FONT_FILES[best])
+		if bundled:
+			_fonts[key] = bundled
+		else:
+			var f := SystemFont.new()
+			f.font_names = PackedStringArray(FONT_FAMILIES)
+			f.font_weight = weight
+			f.antialiasing = TextServer.FONT_ANTIALIASING_GRAY
+			f.hinting = TextServer.HINTING_LIGHT
+			f.allow_system_fallback = true
+			_fonts[key] = f
 	return _fonts[key]
 
 
 static func display_font() -> Font:
 	if not _fonts.has("display"):
-		var f := SystemFont.new()
-		f.font_names = PackedStringArray(DISPLAY_FAMILIES)
-		f.font_weight = 900
-		f.allow_system_fallback = true
-		_fonts["display"] = f
+		var bundled := _load_font(DISPLAY_FILE)
+		if bundled:
+			_fonts["display"] = bundled
+		else:
+			var f := SystemFont.new()
+			f.font_names = PackedStringArray(DISPLAY_FAMILIES)
+			f.font_weight = 900
+			f.allow_system_fallback = true
+			_fonts["display"] = f
 	return _fonts["display"]
+
+
+static func _load_font(path: String) -> Font:
+	if not ResourceLoader.exists(path):
+		return null
+	var f = load(path)
+	if f is FontFile:
+		f.allow_system_fallback = true   # symbols like ★ ✓ ⚠ come from system fonts
+	return f as Font
 
 
 static func panel_style(bg := PAPER, radius := 18, shadow := 14, border := Color(0, 0, 0, 0), border_w := 0) -> StyleBoxFlat:
