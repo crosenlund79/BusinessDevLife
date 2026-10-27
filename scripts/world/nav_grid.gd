@@ -71,6 +71,7 @@ func _set_rect(center: Vector3, size: Vector2, pad: float, solid: bool) -> void:
 
 ## Nearest walkable cell to `c` (breadth-first search).
 func nearest_free(c: Vector2i) -> Vector2i:
+	c = Vector2i(clampi(c.x, 0, cols - 1), clampi(c.y, 0, rows - 1))
 	if is_free(c):
 		return c
 	var seen := {c: true}

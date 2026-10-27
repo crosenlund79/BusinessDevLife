@@ -145,13 +145,23 @@ func _click(screen_pos: Vector2) -> void:
 		request_interact(hit)
 		return
 	var fp = Plane(Vector3.UP, 0.0).intersects_ray(camera.project_ray_origin(screen_pos), camera.project_ray_normal(screen_pos))
-	if fp == null:
-		return
+	if fp == null or fp.x < X_MIN + 0.1 or fp.x > X_MAX - 0.1 or fp.z < Z_BACK + 0.1 or fp.z > Z_FRONT - 0.05:
+		return   # clicked outside the room (the desk the diorama stands on, or behind a wall)
 	_interact_token += 1
 	var path := nav.find_path(player.position, fp)
 	if not path.is_empty():
 		player.walk_path(path)
-		fx.pop("ring", Vector3(fp.x, 0.05, fp.z), 0.5, 0.3)
+		_ping(Vector3(fp.x, 0.02, fp.z))
+
+
+## A flat ring that expands where the player clicked.
+func _ping(p: Vector3) -> void:
+	var r := _flat_sprite("fx/ring", p, 0.5)
+	r.no_depth_test = true
+	var tw := create_tween().set_parallel(true)
+	tw.tween_property(r, "scale", Vector3.ONE * 1.8, 0.35)
+	tw.tween_property(r, "modulate:a", 0.0, 0.35)
+	tw.chain().tween_callback(r.queue_free)
 
 
 func request_interact(id: String) -> void:
@@ -424,7 +434,8 @@ func _standee(path: String, pos: Vector3, width: float, id: String, label: Strin
 	var s := Sprite3D.new()
 	s.texture = t
 	s.shaded = false
-	s.alpha_cut = SpriteBase3D.ALPHA_CUT_OPAQUE_PREPASS
+	s.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+	s.alpha_scissor_threshold = 0.5
 	s.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	var h := 1.0
 	if t:
@@ -489,7 +500,7 @@ func _sprite(path: String, pos: Vector3, width: float, opaque: bool) -> Sprite3D
 	s.shaded = false
 	s.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	if opaque:
-		s.alpha_cut = SpriteBase3D.ALPHA_CUT_OPAQUE_PREPASS
+		s.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
 	if t:
 		s.pixel_size = width / float(t.get_width())
 	s.position = pos

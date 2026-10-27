@@ -57,7 +57,7 @@ Built in **Godot 4.3+ (GDScript)**.
 - **Props and characters are Sprite3D standees** that lean back 7° like real cardboard. Each puppet is 9–10
   quads.
   - Parts are separated by a few millimetres in depth.
-  - `ALPHA_CUT_OPAQUE_PREPASS` keeps their edges smooth and their sorting correct.
+  - They use alpha-scissor (`ALPHA_CUT_DISCARD`), so they render in the opaque pass and the depth buffer orders the stacked cards correctly in every renderer.
 - **Fixed camera** with a slow drift and a slight follow. The flat pieces are never seen edge-on, so
   there is no billboarding and nothing rotates unnaturally.
 - **Textures** are lossless PNGs with mipmaps, and VRAM compression is disabled to avoid halos on the

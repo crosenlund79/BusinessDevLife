@@ -176,7 +176,7 @@ func on_event(ev: String) -> void:
 			ui.set_phone_level(0)
 		"maggie_arrives":
 			maggie.set_expression("angry")
-			await diorama.walk("maggie", Vector3(-0.9, 0, -0.85))
+			await diorama.walk("maggie", Vector3(-1.05, 0, -0.75))
 			maggie.face_point(chad.global_position)
 			chad.face_point(maggie.global_position)
 			maggie.emote("anger")
@@ -195,7 +195,7 @@ func on_event(ev: String) -> void:
 		"brawl_stop":
 			diorama.fx.stop_brawl([chad, maggie])
 			chad.position = Vector3(-2.05, 0, -1.0)
-			maggie.position = Vector3(-0.85, 0, -0.8)
+			maggie.position = Vector3(-1.05, 0, -0.75)
 			chad.set_disheveled(true)
 			chad.set_expression("worried")
 			maggie.set_expression("smug")

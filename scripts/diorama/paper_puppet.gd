@@ -62,6 +62,8 @@ var _gesture_len := 0.0
 var _frozen := false
 var _red := 0.0
 var _turn_tween: Tween
+var _bark_tween: Tween
+var _dishevel := 0.0
 var _eyes_name := "eyes_open"
 var _mouth_name := "mouth_smile"
 
@@ -252,11 +254,13 @@ func bark(text: String, duration := 3.0) -> void:
 	_bubble.visible = true
 	_bubble.modulate.a = 0.0
 	_bubble.outline_modulate.a = 0.0
-	var tw := create_tween().set_parallel(true)
-	tw.tween_property(_bubble, "modulate:a", 1.0, 0.2)
-	tw.tween_property(_bubble, "outline_modulate:a", 1.0, 0.2)
-	tw.chain().tween_interval(duration)
-	tw.chain().tween_callback(_hide_bubble)
+	if _bark_tween and _bark_tween.is_valid():
+		_bark_tween.kill()
+	_bark_tween = create_tween().set_parallel(true)
+	_bark_tween.tween_property(_bubble, "modulate:a", 1.0, 0.2)
+	_bark_tween.tween_property(_bubble, "outline_modulate:a", 1.0, 0.2)
+	_bark_tween.chain().tween_interval(duration)
+	_bark_tween.chain().tween_callback(_hide_bubble)
 
 
 func _hide_bubble() -> void:
@@ -271,7 +275,7 @@ func carry(prop: Node3D) -> void:
 
 
 func set_disheveled(on: bool) -> void:
-	_head.rotation.z = 0.12 if on else 0.0
+	_dishevel = 0.14 if on else 0.0
 
 
 func set_redness(amount: float) -> void:
@@ -349,7 +353,7 @@ func _update_pose(delta: float) -> void:
 	# rest pose: arms hang slightly outward
 	var al := -0.06 + sin(_t * 1.7) * 0.02
 	var ar := 0.06 - sin(_t * 1.7 + 0.6) * 0.02
-	var head_tilt := sin(_t * 0.9) * 0.025
+	var head_tilt := sin(_t * 0.9) * 0.025 + _dishevel
 	var head_y := 0.0
 	var bob_y := sin(_t * 2.2) * 0.006
 	var sway := sin(_t * 1.1) * 0.012
@@ -451,7 +455,10 @@ func _turn_to(dir: float) -> void:
 func _card(parent: Node3D, part: String, pivot: Vector2, z: float) -> Sprite3D:
 	var s := Sprite3D.new()
 	s.pixel_size = PuppetData.UNIT / float(_data.get("scale", 0.75))
-	s.alpha_cut = SpriteBase3D.ALPHA_CUT_OPAQUE_PREPASS
+	# Discard renders in the opaque pass, so the depth buffer (not per-quad
+	# centre sorting) orders the stacked cards - identical in every renderer.
+	s.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+	s.alpha_scissor_threshold = 0.5
 	s.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	s.shaded = false
 	s.double_sided = true

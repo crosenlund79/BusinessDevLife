@@ -25,13 +25,17 @@ const EXPRESSIONS := {
 	"talk": ["eyes_open", "brows_neutral", "mouth_talk"],
 }
 
+## Story ids that use another id's printed art.
+const ART_ID := {"player": "alex"}
+
 static var _cache: Dictionary = {}
 
 
 static func get_data(id: String) -> Dictionary:
 	if _cache.has(id):
 		return _cache[id]
-	var path := (ROOT % id) + "parts.json"
+	var art: String = ART_ID.get(id, id)
+	var path := (ROOT % art) + "parts.json"
 	if not FileAccess.file_exists(path):
 		_cache[id] = {}
 		return {}
@@ -41,7 +45,7 @@ static func get_data(id: String) -> Dictionary:
 		return {}
 	var tex := {}
 	for part in man["parts"]:
-		var tp := (ROOT % id) + str(part) + ".png"
+		var tp := (ROOT % art) + str(part) + ".png"
 		if ResourceLoader.exists(tp):
 			tex[part] = load(tp)
 	var d := {"rig": man["rig"], "parts": man["parts"], "tex": tex, "scale": float(man.get("scale", 0.75))}
