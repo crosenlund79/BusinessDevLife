@@ -180,7 +180,7 @@ func _begin_meet() -> void:
 	Game.set_clock("09:04")
 	_update_meet_objective()
 	world.set_markers(["tobias", "sanne", "bogdan"])
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(4.0, false).timeout
 	ui.toast(Loc.t("apps.calendar"), Loc.t("names.chad"), Loc.t("toasts.invite"), Color("e0862f"))
 	world.npc("chad").bark(Loc.t("barks_special.chad_invite"), 3.0)
 
@@ -287,22 +287,22 @@ func _email_sequence() -> void:
 	var opts: Array = Loc.get_data("replies.gerald_1")
 	var pick: int = await d.mail_choice(opts)
 	Game.set_flag("gerald_reply_%d" % pick)
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(1.4, false).timeout
 	_add_mail(["gerald_reply_which", "gerald_reply_screenshot", "gerald_reply_clever"][pick])
 	Audio.sfx("notify", -6.0)
 	d.show_mail(["gerald_reply_which", "gerald_reply_screenshot", "gerald_reply_clever"][pick])
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.0, false).timeout
 	# Tobias to the rescue (sort of)
 	d.ensure_thread("tobias", Loc.t("names.tobias"), THREAD_COLORS["tobias"], "T")
 	d.add_chat("tobias", Loc.t("names.tobias_short"), Loc.t("chat.tobias_tip_1"), false, THREAD_COLORS["tobias"])
 	d.add_chat("tobias", Loc.t("names.tobias_short"), Loc.t("chat.tobias_tip_2"), false, THREAD_COLORS["tobias"])
 	ui.toast("Natter", Loc.t("names.tobias"), Loc.t("chat.tobias_tip_1"), Color("7a4fd1"))
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.2, false).timeout
 	d.ensure_thread("dagmar", Loc.t("threads.dagmar"), THREAD_COLORS["dagmar"], "D")
 	d.open_app("chat")
 	d.show_thread("dagmar")
 	await _chat_script("dagmar", "chatscript.dagmar")
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	_add_mail("gerald_followup")
 	ui.toast(Loc.t("apps.mail"), Loc.t("names.gerald"), Loc.t("toasts.gerald_followup"), Color("3d7be0"), true)
 	Game.set_flag("req_pop")
@@ -347,12 +347,12 @@ func _chat_lines(thread: String, lines: Array) -> void:
 			var who := str(line.get("s", thread))
 			if who == "me":
 				d.add_chat(thread, Loc.t("ui.me"), str(line["t"]), true)
-				await get_tree().create_timer(0.5).timeout
+				await get_tree().create_timer(0.5, false).timeout
 			else:
 				var nm := Loc.t("names." + who + "_short")
 				await d.typing(thread, nm, clampf(str(line["t"]).length() * 0.025, 0.6, 2.2))
 				d.add_chat(thread, nm, str(line["t"]), false, THREAD_COLORS.get(thread, Color("7a4fd1")))
-				await get_tree().create_timer(0.35).timeout
+				await get_tree().create_timer(0.35, false).timeout
 
 
 func _spec_sequence() -> void:
@@ -428,11 +428,11 @@ func _test_sequence() -> void:
 	Game.input_locked = false
 	await _talk("sanne_test_done", ["sanne"])
 	# the client performs "acceptance testing"
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.2, false).timeout
 	ui.set_phone_level(1)
 	_add_mail("gerald_uat")
 	ui.toast(Loc.t("apps.mail"), Loc.t("names.gerald"), Loc.t("toasts.gerald_uat"), Color("3d7be0"), true)
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.0, false).timeout
 	ui.set_phone_level(0)
 	stage = "deploy"
 	Game.set_clock("15:20")
@@ -448,7 +448,7 @@ func _deploy_sequence() -> void:
 	Game.add_stat("billed_hours", 7.5)
 	world.npc("bogdan").gesture("fist", 1.5)
 	world.npc("bogdan").emote("✓", Color("2fae5c"))
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.4, false).timeout
 	for id in ["tobias", "sanne", "kevin", "pia", "olu"]:
 		var c := world.npc(id)
 		if c:
@@ -457,7 +457,7 @@ func _deploy_sequence() -> void:
 	world.npc("chad").bark(Loc.t("barks_special.chad_synergy"), 3.0)
 	world.npc("pia").bark(Loc.t("barks_special.pia_deploy"), 3.0)
 	Audio.sfx("bell", -4.0)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	ui.toast("Natter", Loc.t("threads.general"), Loc.t("toasts.chad_general"), Color("7a4fd1"))
 	ui.desktop.add_chat("general", Loc.t("names.chad"), Loc.t("toasts.chad_general"), false, Color("c0392b"))
 	for id in ["tobias", "sanne", "kevin", "pia", "olu"]:
@@ -500,7 +500,7 @@ func _disaster_sequence() -> void:
 	world.rig.snap()
 	await ui.fade_in(0.5)
 	await ui.dialogue.play("war_room")
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.6, false).timeout
 	await ui.dialogue.play("twist")
 	await _ending()
 
@@ -523,6 +523,7 @@ func _place_war_room(after_brawl: bool) -> void:
 
 func _ending() -> void:
 	await ui.fade_out(0.6)
+	world.rig.release_focus()
 	Game.set_clock("17:30")
 	world.reset_positions()
 	for id in ["tobias", "sanne", "bogdan", "chad"]:
@@ -597,7 +598,7 @@ func on_event(ev: String) -> void:
 		"sfx":
 			Audio.sfx(parts[1], -2.0)
 		"wait":
-			await get_tree().create_timer(float(parts[1])).timeout
+			await get_tree().create_timer(float(parts[1]), false).timeout
 		"tv_synergia":
 			world.screen("meeting_tv").show_spec({"kind": "slide", "kicker": Loc.t("screens.syn_kicker"), "title": Loc.t("screens.syn_title"), "title_size": 96, "subtitle": Loc.t("screens.syn_sub"), "accent": "#8a6cff", "bg": "#151a2b", "footer": Loc.t("screens.syn_footer")})
 			Audio.sfx("tada", -6.0)
@@ -606,13 +607,13 @@ func on_event(ev: String) -> void:
 		"awkward":
 			Audio.duck(-24.0, 0.3)
 			Audio.sfx("crickets", -4.0)
-			await get_tree().create_timer(2.4).timeout
+			await get_tree().create_timer(2.4, false).timeout
 			Audio.unduck()
 		"phone_buzz":
 			ui.set_phone_level(1)
 			Audio.sfx("buzz", -2.0)
 			ui.toast(Loc.t("apps.mail"), Loc.t("names.gerald"), Loc.t("toasts.gerald_urgent"), Color("3d7be0"), true)
-			await get_tree().create_timer(1.2).timeout
+			await get_tree().create_timer(1.2, false).timeout
 		"phone_calm":
 			ui.set_phone_level(0)
 		"disaster_1":
@@ -621,23 +622,23 @@ func on_event(ev: String) -> void:
 			ui.desktop.ensure_thread("dagmar", Loc.t("threads.dagmar"), THREAD_COLORS["dagmar"], "D")
 			ui.desktop.add_chat("dagmar", Loc.t("names.dagmar_short"), Loc.t("toasts.dagmar_1"), false, THREAD_COLORS["dagmar"])
 			ui.toast("Natter", Loc.t("names.dagmar"), Loc.t("toasts.dagmar_1"), Color("7a4fd1"))
-			await get_tree().create_timer(1.6).timeout
+			await get_tree().create_timer(1.6, false).timeout
 		"disaster_2":
 			ui.set_phone_level(2)
 			Audio.sfx("buzz", 0.0)
 			ui.desktop.add_chat("dagmar", Loc.t("names.dagmar_short"), Loc.t("toasts.dagmar_2"), false, THREAD_COLORS["dagmar"])
 			ui.toast("Natter", Loc.t("names.dagmar"), Loc.t("toasts.dagmar_2"), Color("7a4fd1"))
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.0, false).timeout
 			ui.toast(Loc.t("apps.mail"), Loc.t("names.gerald"), Loc.t("toasts.gerald_panic_1"), Color("3d7be0"), true)
-			await get_tree().create_timer(1.2).timeout
+			await get_tree().create_timer(1.2, false).timeout
 		"disaster_3":
 			ui.set_phone_level(3)
 			Audio.sfx("alarm", -6.0)
 			world.rig.shake(0.4)
 			ui.toast(Loc.t("apps.mail"), Loc.t("names.gerald"), Loc.t("toasts.gerald_panic_2"), Color("3d7be0"), true)
-			await get_tree().create_timer(0.6).timeout
+			await get_tree().create_timer(0.6, false).timeout
 			ui.toast(Loc.t("apps.mail"), Loc.t("names.gerald"), Loc.t("toasts.gerald_panic_3"), Color("3d7be0"), true)
-			await get_tree().create_timer(1.2).timeout
+			await get_tree().create_timer(1.2, false).timeout
 		"call_shake":
 			ui.call_shake(float(parts[1]) if parts.size() > 1 else 1.0)
 		"call_calm":
@@ -663,29 +664,29 @@ func on_event(ev: String) -> void:
 				c.bark(Loc.t("barks_special.me"), 1.6)
 				c.gesture("nod", 0.6)
 				Audio.sfx("pop", -8.0, 1.0 + randf() * 0.3)
-				await get_tree().create_timer(0.45).timeout
+				await get_tree().create_timer(0.45, false).timeout
 		"war_twist":
 			ui.set_phone_level(1)
 			Audio.sfx("notify", -2.0)
 			ui.toast("Natter", Loc.t("names.dagmar"), Loc.t("toasts.dagmar_twist"), Color("7a4fd1"))
 			ui.desktop.add_chat("dagmar", Loc.t("names.dagmar_short"), Loc.t("toasts.dagmar_twist"), false, THREAD_COLORS["dagmar"])
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.0, false).timeout
 			ui.toast(Loc.t("apps.mail"), Loc.t("names.gerald"), Loc.t("toasts.gerald_thanks"), Color("3d7be0"), true)
 			_add_mail("gerald_thanks")
 			world.screen("war_margin").show_spec({"kind": "line", "title": Loc.t("screens.war_margin_title"), "values": [22, 14, 3, -9, -14, 38], "labels": ["Jan", "Mar", "May", "Jul", "Sep", Loc.t("screens.today")], "arrow_note": Loc.t("screens.war_margin_arrow2"), "accent": "#2fae5c"})
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.0, false).timeout
 			ui.set_phone_level(0)
 		"final_buzz":
 			ui.set_phone_level(2)
 			Audio.sfx("buzz", 0.0)
 			_add_mail("gerald_final")
 			ui.toast(Loc.t("apps.mail"), Loc.t("names.gerald"), Loc.t("toasts.gerald_final"), Color("3d7be0"), true)
-			await get_tree().create_timer(1.5).timeout
+			await get_tree().create_timer(1.5, false).timeout
 			ui.set_phone_level(0)
 		"sad_trombone":
 			Audio.duck(-20.0, 0.2)
 			Audio.sfx("sad_trombone", 0.0)
-			await get_tree().create_timer(2.4).timeout
+			await get_tree().create_timer(2.4, false).timeout
 			Audio.unduck()
 		"flash":
 			ui.flash()
@@ -703,7 +704,7 @@ func _biscuit_avalanche() -> void:
 	Audio.duck(-14.0, 0.5)
 	Audio.sfx("rumble", 0.0)
 	world.rig.shake(0.6)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	_flood = world.start_biscuits()
 	for id in ["maggie", "player", "kevin", "pia", "olu", "tobias", "sanne"]:
 		var c := world.npc(id)
@@ -711,10 +712,10 @@ func _biscuit_avalanche() -> void:
 			c.set_expression("shock")
 			c.gesture("shock", 1.4)
 			c.emote("!!", Color("e85d5d"))
-	await get_tree().create_timer(2.2).timeout
+	await get_tree().create_timer(2.2, false).timeout
 	Audio.sfx("rumble", -2.0)
 	world.rig.shake(0.5)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false).timeout
 	Game.stats["biscuits_kg"] = 2400
 	Audio.unduck()
 	world.rig.focus_on(world.player.global_position, 7.0, -30.0)
@@ -732,12 +733,12 @@ func _brawl() -> void:
 		c.set_expression("furious")
 		c.gesture("rage", 1.0)
 	world.rig.shake(0.3)
-	await get_tree().create_timer(0.8).timeout
+	await get_tree().create_timer(0.8, false).timeout
 	Audio.sfx("whoosh", 0.0, 0.7)
 	world.start_brawl(world.point("war_center") + Vector3(0, 0, -1.6), ids)
 	world.rig.shake(0.6)
 	Audio.play_music("brawl", 0.3)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false).timeout
 
 
 func _maggie_arrives() -> void:
@@ -769,5 +770,5 @@ func _brawl_stop() -> void:
 	Audio.stop_music(0.2)
 	Audio.play_stream_path("res://audio/generated/sting_happy_ending.wav", -2.0)
 	ui.flash(Color(1, 1, 1, 0.6))
-	await get_tree().create_timer(3.2).timeout
+	await get_tree().create_timer(3.2, false).timeout
 	Audio.play_music("office", 1.5)

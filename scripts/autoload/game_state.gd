@@ -111,3 +111,5 @@ func _load_settings() -> void:
 		return
 	for key in settings.keys():
 		settings[key] = cfg.get_value("settings", key, settings[key])
+	if settings["fullscreen"]:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

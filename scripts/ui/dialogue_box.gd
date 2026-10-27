@@ -36,6 +36,7 @@ var _fast := false
 var _speaker := ""
 var _waiting_choice := false
 var _t := 0.0
+var _hide_tween: Tween
 
 
 func build(character_defs: Dictionary) -> void:
@@ -155,6 +156,7 @@ func play(key: String) -> String:
 	if not (lines is Array):
 		push_warning("Dialogue: missing conversation '%s'" % key)
 		return ""
+	_kill_hide()
 	active = true
 	_fast = false
 	_set_visible(true)
@@ -167,6 +169,7 @@ func play(key: String) -> String:
 
 ## Plays a single ad-hoc line (used by the story for dynamic text).
 func say(speaker: String, text: String, expr := "", gest := "") -> void:
+	_kill_hide()
 	active = true
 	_set_visible(true)
 	await _say({"s": speaker, "t": text, "e": expr, "g": gest})
@@ -331,13 +334,24 @@ func _end() -> void:
 	_typing = false
 	_fast = false
 	studio.show_char("")
-	var tw := create_tween()
-	tw.tween_property(_panel, "modulate", Color(1, 1, 1, 0), 0.15)
-	tw.tween_callback(func(): _set_visible(false))
+	_hide_tween = create_tween()
+	_hide_tween.tween_property(_panel, "modulate", Color(1, 1, 1, 0), 0.15)
+	_hide_tween.tween_callback(_hide_if_inactive)
 	if world:
 		for id in world.chars:
 			var c: Character = world.chars[id]
 			c.set_talking(false)
+
+
+func _kill_hide() -> void:
+	if _hide_tween and _hide_tween.is_valid():
+		_hide_tween.kill()
+	_hide_tween = null
+
+
+func _hide_if_inactive() -> void:
+	if not active:
+		_set_visible(false)
 
 
 func _on_skip() -> void:

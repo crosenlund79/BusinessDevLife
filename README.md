@@ -19,6 +19,10 @@ Roughly 10–15 minutes of play, with one complete story and several branches.
    The first open imports the generated audio (a few seconds).
 3. Press **F5** (or ▶ Play).
 
+> Open the project in the **editor** at least once before running it from the command line. That first
+> open builds Godot's class cache (the scripts use `class_name`) and imports the audio. Without it the
+> game reports "Identifier not declared" and plays no sound. Running `godot --headless --import` also works.
+
 No downloads, add-ons or external assets are needed. Every mesh, material, face, chart and sound is generated
 by the code in this repository or by `tools/gen_audio.py`.
 

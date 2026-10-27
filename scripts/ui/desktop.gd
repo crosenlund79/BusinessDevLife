@@ -17,6 +17,7 @@ var thread_order: Array = []
 var current_app := "mail"
 var current_mail := ""
 var current_thread := ""
+var _mail_choice_pending := false
 
 var _window: PanelContainer
 var _title: Label
@@ -320,8 +321,9 @@ func show_mail(id: String) -> void:
 			_mail_from.text = Loc.t("apps.mail_from", {"from": str(m.get("from_name", "")), "time": str(m.get("time", ""))})
 			_mail_body.text = str(m.get("body", ""))
 			break
-	for c in _mail_actions.get_children():
-		c.queue_free()
+	if not _mail_choice_pending:
+		for c in _mail_actions.get_children():
+			c.queue_free()
 	_render_mail_list()
 	_update_badges()
 
@@ -336,7 +338,9 @@ func mail_choice(options: Array) -> int:
 		b.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		b.pressed.connect(func(): _choice_made.emit(i))
 		_mail_actions.add_child(b)
+	_mail_choice_pending = true
 	var idx: int = await _choice_made
+	_mail_choice_pending = false
 	for c in _mail_actions.get_children():
 		c.queue_free()
 	Audio.sfx("whoosh", -8.0, 1.3)
